@@ -176,12 +176,12 @@ export const TREE: Record<string, TreeNode> = {
     title: "Employer insurance + oral pill path",
     steps: [
       {
-        title: "Check your formulary",
+        title: "Check what your plan covers",
         body: "Call the number on your insurance card and ask: “Is Wegovy oral tablet or Foundayo covered on my plan for weight management?” Ask about tier, copay, and whether prior authorization is required.",
       },
       {
         title: "Talk to your doctor",
-        body: "Ask your PCP or an obesity medicine specialist to prescribe. Bring your formulary info so they know which drug to write for.",
+        body: "Ask your PCP or an obesity medicine specialist to prescribe. Bring what you learned about your plan's coverage so they know which drug to write for.",
       },
       {
         title: "If covered",
@@ -209,7 +209,7 @@ export const TREE: Record<string, TreeNode> = {
     title: "Employer insurance + injection path",
     steps: [
       {
-        title: "Check your formulary",
+        title: "Check what your plan covers",
         body: "Call your insurer: “Is Wegovy or Zepbound covered for weight management?” One may be covered and not the other. Ask about tier and prior auth requirements.",
       },
       {
@@ -333,7 +333,7 @@ export const TREE: Record<string, TreeNode> = {
     title: "Individual plan (marketplace or direct purchase)",
     steps: [
       {
-        title: "Check your formulary first",
+        title: "Check what your plan covers first",
         body: "Whether you bought through healthcare.gov or directly from a carrier like Blue Shield, check if your specific plan covers GLP-1s for weight management. Call the number on your card.",
       },
       {
@@ -351,7 +351,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Open enrollment tip",
-        body: "When shopping for next year's plan, check formularies BEFORE enrolling. Look for plans that cover Wegovy or Zepbound on a reasonable tier.",
+        body: "When shopping for next year's plan, check each plan's covered drug list BEFORE enrolling. Look for plans that cover Wegovy or Zepbound on a reasonable tier.",
       },
     ],
   },
@@ -367,7 +367,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "VA",
-        body: "VA formulary includes some GLP-1s. Availability may vary by VA facility. Talk to your VA provider about what's available at your location.",
+        body: "The VA's covered drug list includes some GLP-1s. Availability may vary by VA facility. Talk to your VA provider about what's available at your location.",
       },
       {
         title: "If not covered through military benefits",
@@ -604,7 +604,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Insurance may differ",
-        body: "Your plan may cover one GLP-1 but not another. Check formulary before switching.",
+        body: "Your plan may cover one GLP-1 but not another. Check what your plan covers before switching.",
       },
       {
         title: "Talk to your prescriber",
@@ -641,7 +641,7 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Read the denial letter",
-        body: "Your insurer must provide a specific reason. Common: BMI doesn't meet threshold, haven't completed step therapy, drug isn't on formulary.",
+        body: "Your insurer must provide a specific reason. Common: BMI doesn't meet threshold, haven't completed step therapy, the drug isn't on your plan's covered list.",
       },
       {
         title: "Ask your doctor to appeal",
@@ -662,7 +662,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "HR escalation (employer plans)",
-        body: "Your doctor can write a formal coverage request letter to your HR department requesting a formulary exception.",
+        body: "Your doctor can write a formal coverage request letter to your HR department asking the plan to make an exception and cover the drug.",
       },
     ],
     warnings: [
@@ -711,11 +711,11 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Common denial reasons",
-        body: "Prior authorization not submitted yet. Step therapy needed. Not on formulary. BMI threshold not met.",
+        body: "Prior authorization not submitted yet. Step therapy needed. Not on your plan's covered list. BMI threshold not met.",
       },
       {
         title: "Next step depends on reason",
-        body: "If PA wasn't submitted: ask your doctor to submit it. If step therapy: ask what's required. If not on formulary: ask which GLP-1s ARE covered. If BMI: ask about documenting comorbidities.",
+        body: "If PA wasn't submitted: ask your doctor to submit it. If step therapy: ask what's required. If not on your plan's covered list: ask which GLP-1s ARE covered. If BMI: ask about documenting comorbidities.",
       },
       {
         title: "Self-pay while you figure it out",
