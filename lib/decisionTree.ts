@@ -28,11 +28,16 @@ export type Question = {
 
 export type TreeNode = Question | Endpoint;
 
-const TELEHEALTH_CTAS: Cta[] = [
+const PLUSHCARE_CTA: Cta = {
+  label: "Check PlushCare",
+  url: "#affiliate-placeholder",
+  affiliate: true,
+};
+
+const SUBSCRIPTION_TELEHEALTH_CTAS: Cta[] = [
   { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
   { label: "Check Found", url: "#affiliate-placeholder", affiliate: true },
   { label: "Check ShedRx", url: "#affiliate-placeholder", affiliate: true },
-  { label: "Check PlushCare", url: "#affiliate-placeholder", affiliate: true },
   { label: "Check LifeMD", url: "#affiliate-placeholder", affiliate: true },
 ];
 
@@ -97,6 +102,12 @@ const PILL_COMPARISON: Step = {
 const SAXENDA_FALLBACK: Step = {
   title: "Worth asking about: Saxenda",
   body: "If your insurance probably won't cover any of the newer options, ask your doctor about Saxenda (liraglutide). It's an older daily injection that some plans still cover. It produces less weight loss (~6-8% vs 12-16% for the newer drugs), but it's better than nothing, and a generic version exists which can keep your cost down. For self-pay though, skip Saxenda — the pills (Foundayo or Wegovy pill at $149/mo) are usually cheaper and more effective.",
+};
+
+const GET_PRESCRIBED: Step = {
+  title: "How to get a prescription",
+  body: "Three ways to get one, cheapest first.\n\nYour own doctor — free beyond your normal visit cost, no membership. Best if you already have a doctor you see regularly.\n\nPlushCare — $19.99/mo membership (30-day free trial) plus $129/visit without insurance, or just your copay with insurance. Good if you want a one-time setup without a big subscription.\n\nSubscription telehealth (Ro, Found, ShedRx, LifeMD) — $39-149/mo membership that includes ongoing check-ins, dose adjustments, and insurance paperwork help. Good if you want everything handled for you.",
+  ctas: [PLUSHCARE_CTA, ...SUBSCRIPTION_TELEHEALTH_CTAS],
 };
 
 export const ROOT_ID = "q1";
@@ -208,11 +219,7 @@ export const TREE: Record<string, TreeNode> = {
         title: "If denied",
         body: "Don't panic — a denial isn't the end of the road. Your doctor can usually file an appeal, and plenty of denials get overturned. The “denied coverage” path on this site walks through what to do next.",
       },
-      {
-        title: "Telehealth alternative",
-        body: "Your own doctor can prescribe GLP-1s — you don't need telehealth. But if your doctor won't prescribe or you want faster access, telehealth providers like Ro, Found, or ShedRx can prescribe and help navigate your insurance. Most charge $20-$149/mo membership on top of your medication costs. You keep your employer coverage either way.",
-        ctas: TELEHEALTH_CTAS,
-      },
+      GET_PRESCRIBED,
     ],
   },
 
@@ -225,11 +232,7 @@ export const TREE: Record<string, TreeNode> = {
         title: "Check what your plan covers",
         body: "Call your insurer and ask: “Is Wegovy or Zepbound covered for weight management?” One may be covered and not the other. While you're on the phone, ask about your copay (what you'd pay at the pharmacy), what tier the drug is on (the plan's category that sets your cost), and whether prior authorization is required — that's when your doctor formally asks the insurer for permission to cover the drug.",
       },
-      {
-        title: "Get prescribed",
-        body: "Your own primary care doctor or an obesity medicine specialist can write the prescription. That's usually the cheapest path — you're already paying for those visits through insurance. If your doctor likely won't prescribe, telehealth providers like Ro, Found, or PlushCare can prescribe and work with your existing insurance. Telehealth runs about $20-$149/mo in membership fees on top of your medication costs.",
-        ctas: TELEHEALTH_CTAS,
-      },
+      GET_PRESCRIBED,
       {
         title: "Manufacturer savings",
         body: "Zepbound has a Lilly savings card that reduces your copay (what you pay at the pharmacy). Wegovy has a NovoCare savings offer that does the same. These stack on top of your insurance coverage, so you can use both.",
@@ -340,9 +343,10 @@ export const TREE: Record<string, TreeNode> = {
       SAXENDA_FALLBACK,
       {
         title: "If not covered",
-        body: "You can pay out of pocket regardless of Medicaid. Self-pay means paying the full price yourself — these come from the drug makers directly (as of June 2026). Cheapest first: Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect). Telehealth providers like Ro or PlushCare may also bundle the prescription and ongoing care — they charge $20-$149/mo membership on top of the medication.",
-        ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT, ...TELEHEALTH_CTAS],
+        body: "You can pay out of pocket regardless of Medicaid. Self-pay means paying the full price yourself — these come from the drug makers directly (as of June 2026). Cheapest first: Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).",
+        ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
+      GET_PRESCRIBED,
     ],
   },
 
@@ -415,11 +419,7 @@ export const TREE: Record<string, TreeNode> = {
         ctas: [NOVOCARE],
       },
       PILL_COMPARISON,
-      {
-        title: "How to get prescribed",
-        body: "Since you don't have insurance, telehealth is usually the easiest path to a prescription. Providers like Ro, Found, ShedRx, and LifeMD offer online consultations. They charge $20-$149/mo membership, which covers your initial visit, ongoing check-ins, and dose adjustments. The medication is a separate cost.",
-        ctas: TELEHEALTH_CTAS,
-      },
+      GET_PRESCRIBED,
       {
         title: "GoodRx as a pickup option",
         body: "GoodRx has a partnership with Novo Nordisk that lets you pick up Wegovy at 70,000+ retail pharmacies — useful if you'd rather grab it at CVS or Walgreens than ship from a mail-order pharmacy.",
@@ -458,11 +458,7 @@ export const TREE: Record<string, TreeNode> = {
         body: "If drawing from a vial sounds intimidating, the KwikPen is a pre-filled injector pen — much simpler to use. Check LillyDirect for current self-pay pricing.",
         ctas: [LILLY_DIRECT],
       },
-      {
-        title: "How to get prescribed",
-        body: "Without insurance, telehealth is usually the easiest route. Ro, Found, ShedRx, LifeMD, and PlushCare all handle the consultation and ship the medication to your door. They charge $20-$149/mo membership, which covers your visit and ongoing check-ins. Medication is a separate cost.",
-        ctas: TELEHEALTH_CTAS,
-      },
+      GET_PRESCRIBED,
       {
         title: "Walmart pharmacies",
         body: "Walmart's 4,600 pharmacies offer Zepbound vials at discounted self-pay prices — worth checking if there's one near you.",
@@ -515,11 +511,7 @@ export const TREE: Record<string, TreeNode> = {
         body: "All the higher doses (7.5mg, 10mg, 12.5mg, 15mg). Through LillyDirect.",
         ctas: [LILLY_DIRECT],
       },
-      {
-        title: "Telehealth to get prescribed",
-        body: "Before any of the above will sell to you, you need a prescription. Without insurance, telehealth is usually the easiest route. Ro, Found, ShedRx, PlushCare, and LifeMD bundle the consultation, prescription, and shipping. Most charge $20-$149/mo membership, which covers the visit and ongoing check-ins. The medication itself is a separate cost.",
-        ctas: TELEHEALTH_CTAS,
-      },
+      GET_PRESCRIBED,
     ],
     warnings: [
       "You may have heard about compounded GLP-1s at $99-200/mo. The FDA has ended the shortage designations that made them legal at scale, and is moving to permanently ban large-scale compounding. Some small 503A pharmacies still operate, but availability is shrinking and the legal status is uncertain — be cautious about anyone marketing them as cheaper alternatives.",
@@ -603,11 +595,7 @@ export const TREE: Record<string, TreeNode> = {
         title: "Key question",
         body: "Before you switch, make sure your new provider can prescribe your current medication at the same dose you're on. Otherwise you risk a gap — or having to start over from the lowest dose and re-titrate (slowly building back up week by week to where you are now), which takes weeks of stomach side effects.",
       },
-      {
-        title: "Telehealth options",
-        body: "Ro, Found, ShedRx, PlushCare, and LifeMD all offer ongoing GLP-1 management. They charge $20-$149/mo membership which covers your visits and ongoing check-ins. When comparing, look at: how well they handle insurance (if you have it), how quickly they reply to messages, and how often they check in with you.",
-        ctas: TELEHEALTH_CTAS,
-      },
+      GET_PRESCRIBED,
       {
         title: "Transfer your prescription",
         body: "Once you've picked a new provider, ask them to contact your current pharmacy and transfer your prescription. They handle all the pharmacy-to-pharmacy paperwork — you don't have to do anything.",
@@ -715,16 +703,7 @@ export const TREE: Record<string, TreeNode> = {
         title: "Ask for a referral",
         body: "Ask for a referral to either an obesity medicine specialist (a doctor whose specialty is treating obesity) or an endocrinologist (a hormone specialist who treats things like diabetes and metabolic conditions). Both routinely prescribe GLP-1s.",
       },
-      {
-        title: "Telehealth",
-        body: "Licensed telehealth providers like Ro, Found, ShedRx, PlushCare, and LifeMD specialize in GLP-1 prescribing — it's a big part of what they do. They can prescribe in parallel with your existing doctor. They charge $20-$149/mo membership, which covers visits and check-ins; medication is a separate cost.",
-        ctas: TELEHEALTH_CTAS,
-      },
-      {
-        title: "LillyDirect",
-        body: "Eli Lilly's direct platform includes telehealth through their partner FORM Health. They can prescribe Zepbound or Foundayo and ship the medication straight to you.",
-        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT],
-      },
+      GET_PRESCRIBED,
       {
         title: "Keep your PCP informed",
         body: "Even if you get prescribed through telehealth, tell your regular doctor that you're starting a GLP-1. They should know about every medication you're on so they can keep an eye on your overall health.",

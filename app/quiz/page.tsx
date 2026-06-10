@@ -229,7 +229,7 @@ function StepCard({ index, step }: { index: number; step: Step }) {
           <h2 className="text-base sm:text-lg font-semibold text-teal-900 leading-snug">
             {step.title}
           </h2>
-          <p className="mt-2 text-teal-900/80 leading-relaxed">{step.body}</p>
+          <p className="mt-2 text-teal-900/80 leading-relaxed whitespace-pre-line">{step.body}</p>
           {step.ctas?.length ? (
             <div className="mt-4 flex flex-wrap gap-2">
               {step.ctas.map((c, i) => (
