@@ -43,8 +43,20 @@ const LILLY_DIRECT: Cta = {
 };
 
 const LILLY_SAVINGS: Cta = {
-  label: "Lilly savings card",
+  label: "Zepbound savings card",
   url: "https://zepbound.lilly.com/savings",
+  affiliate: false,
+};
+
+const FOUNDAYO_DIRECT: Cta = {
+  label: "Visit Foundayo on LillyDirect",
+  url: "https://www.lilly.com/lillydirect/announcing-foundayo",
+  affiliate: false,
+};
+
+const FOUNDAYO_SAVINGS: Cta = {
+  label: "Foundayo savings card",
+  url: "https://foundayo.lilly.com/coverage-savings",
   affiliate: false,
 };
 
@@ -174,7 +186,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "If covered",
         body: "Foundayo: as low as $25/mo with commercial coverage using Lilly's savings card. Wegovy pill: check NovoCare savings offer for copay reduction.",
-        ctas: [LILLY_SAVINGS, NOVOCARE_SAVINGS],
+        ctas: [FOUNDAYO_SAVINGS, NOVOCARE_SAVINGS],
       },
       {
         title: "If denied",
@@ -264,7 +276,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "If you don't qualify",
         body: "Self-pay options exist: Foundayo at $149/mo, LillyDirect Zepbound at $299-449/mo, or NovoCare Wegovy at $499/mo. All available regardless of insurance status.",
-        ctas: [LILLY_DIRECT, NOVOCARE],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
     ],
   },
@@ -281,7 +293,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Self-pay options (no insurance needed)",
         body: "Foundayo pill: $149/mo via LillyDirect. Zepbound injection: $299/mo (2.5mg), $399/mo (5mg), $449/mo (7.5-15mg) via LillyDirect. Wegovy: $499/mo via NovoCare Pharmacy.",
-        ctas: [LILLY_DIRECT, NOVOCARE],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
       {
         title: "Consider waiting",
@@ -310,7 +322,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "If not covered",
         body: "Self-pay: Foundayo at $149/mo, Zepbound at $299-449/mo via LillyDirect, Wegovy at $499/mo via NovoCare. Some telehealth providers also offer lower-cost options.",
-        ctas: [LILLY_DIRECT, NOVOCARE, ...TELEHEALTH_CTAS],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE, ...TELEHEALTH_CTAS],
       },
     ],
   },
@@ -335,7 +347,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "If not covered or too restrictive",
         body: "You can use self-pay options alongside your insurance for everything else. Foundayo: $149/mo. LillyDirect Zepbound: $299-449/mo. NovoCare Wegovy: $499/mo.",
-        ctas: [LILLY_DIRECT, NOVOCARE],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
       {
         title: "Open enrollment tip",
@@ -360,7 +372,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "If not covered through military benefits",
         body: "Self-pay options work for anyone: Foundayo $149/mo, LillyDirect Zepbound $299-449/mo, NovoCare Wegovy $499/mo.",
-        ctas: [LILLY_DIRECT, NOVOCARE],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
     ],
   },
@@ -373,7 +385,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Best value: Foundayo",
         body: "$149/mo self-pay through LillyDirect or participating pharmacies. Can be taken any time of day, no food restrictions. Eli Lilly's newest FDA-approved option (April 2026).",
-        ctas: [LILLY_DIRECT],
+        ctas: [FOUNDAYO_DIRECT],
       },
       {
         title: "Alternative: Wegovy pill",
@@ -442,7 +454,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "$149/mo: Foundayo pill",
         body: "Eli Lilly's oral GLP-1. No needles, take any time of day. Available through LillyDirect and retail pharmacies. Newest option (FDA approved April 2026).",
-        ctas: [LILLY_DIRECT],
+        ctas: [FOUNDAYO_DIRECT],
       },
       {
         title: "$249/mo: Wegovy subscription",
@@ -506,7 +518,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "If you truly have no insurance",
         body: "You can still access GLP-1s through self-pay. Foundayo starts at $149/mo. Zepbound starts at $299/mo. No insurance required.",
-        ctas: [LILLY_DIRECT],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT],
       },
     ],
   },
@@ -543,7 +555,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Switch medications",
         body: "Foundayo at $149/mo self-pay is significantly cheaper than Wegovy or Zepbound injections. Discuss with your prescriber.",
-        ctas: [LILLY_DIRECT],
+        ctas: [FOUNDAYO_DIRECT],
       },
       {
         title: "Stack savings",
@@ -609,7 +621,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Two pill options now exist",
         body: "Foundayo (orforglipron by Eli Lilly): take any time, no food restrictions, $149/mo self-pay or $25/mo with commercial insurance savings card. Wegovy pill (semaglutide by Novo Nordisk): morning on empty stomach, 30-min food wait.",
-        ctas: [LILLY_DIRECT, NOVOCARE],
+        ctas: [FOUNDAYO_DIRECT, FOUNDAYO_SAVINGS, NOVOCARE],
       },
       {
         title: "Clinical note",
@@ -646,7 +658,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "In parallel: Start self-pay",
         body: "While appealing, begin treatment through self-pay. Foundayo $149/mo, Zepbound $299-449/mo via LillyDirect. If appeal succeeds, switch back.",
-        ctas: [LILLY_DIRECT],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT],
       },
       {
         title: "HR escalation (employer plans)",
@@ -679,7 +691,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "LillyDirect",
         body: "Eli Lilly's direct platform includes a telehealth consultation through their partner FORM Health. They can prescribe Zepbound or Foundayo and ship directly.",
-        ctas: [LILLY_DIRECT],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT],
       },
       {
         title: "Keep your PCP informed",
@@ -708,7 +720,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Self-pay while you figure it out",
         body: "Foundayo: $149/mo. LillyDirect Zepbound: $299-449/mo. No insurance needed.",
-        ctas: [LILLY_DIRECT],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT],
       },
     ],
   },
@@ -729,7 +741,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Transition options (cheapest first)",
         body: "Foundayo pill: $149/mo, no needles, via LillyDirect. Zepbound vials: $299/mo (2.5mg) via LillyDirect. Wegovy subscription: $249/mo (12-month commitment). Wegovy month-to-month: $499/mo via NovoCare. All FDA-approved.",
-        ctas: [LILLY_DIRECT, NOVOCARE],
+        ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
       {
         title: "Dose transition",
