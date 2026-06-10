@@ -84,6 +84,11 @@ const GOODRX: Cta = {
   affiliate: false,
 };
 
+const PRESCRIPTION_BASICS: Step = {
+  title: "First, how prescriptions work",
+  body: "You need a prescription from a licensed doctor or provider to get any GLP-1 — there's no over-the-counter version. But you don't need insurance to get one. A prescription is just your doctor saying this medication is right for you. How you pay for it is a separate question, and that's what the rest of this page is about.",
+};
+
 export const ROOT_ID = "q1";
 
 export const TREE: Record<string, TreeNode> = {
@@ -177,29 +182,29 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Check what your plan covers",
-        body: "Call the number on your insurance card and ask: “Is Wegovy oral tablet or Foundayo covered on my plan for weight management?” Ask about tier, copay, and whether prior authorization is required.",
+        body: "Call the number on your insurance card and ask: “Is Wegovy oral tablet or Foundayo covered on my plan for weight management?” While you're on the phone, ask three things: what your copay would be (the amount you pay at the pharmacy), what tier the drug is on (your plan's category for the drug, which sets how much you pay), and whether prior authorization is required — that's when your doctor formally asks the insurer for permission to cover the drug before they'll pay.",
       },
       {
         title: "Talk to your doctor",
-        body: "Ask your PCP or an obesity medicine specialist to prescribe. Bring what you learned about your plan's coverage so they know which drug to write for.",
+        body: "Ask your primary care doctor or an obesity medicine specialist to write the prescription. Bring what you learned about your plan's coverage so they know which drug to write for. If a prior authorization is needed, the office handles all the paperwork — you just need to ask them to start it.",
       },
       {
         title: "If covered",
-        body: "Foundayo: as low as $25/mo with commercial coverage using Lilly's savings card. Wegovy pill: check NovoCare savings offer for copay reduction.",
+        body: "Foundayo: as low as $25/mo with commercial coverage using Lilly's savings card (a manufacturer coupon that lowers what you pay at the pharmacy). Wegovy pill: check NovoCare's savings offer, which works the same way.",
         ctas: [FOUNDAYO_SAVINGS, NOVOCARE_SAVINGS],
       },
       {
         title: "If denied",
-        body: "Don't panic. Your doctor can file a prior authorization or appeal. See the “denied coverage” path for detailed next steps.",
+        body: "Don't panic — a denial isn't the end of the road. Your doctor can usually file an appeal, and many denials get overturned. The “denied coverage” path on this site walks through what to do next.",
       },
       {
         title: "Telehealth alternative",
-        body: "If your PCP won't prescribe, telehealth providers like Ro, Found, or ShedRx can prescribe and help navigate your insurance. You keep your employer coverage.",
+        body: "Your own doctor can prescribe GLP-1s — you don't need telehealth. But if your doctor won't prescribe or you want faster access, telehealth providers like Ro, Found, or ShedRx can prescribe and help navigate your insurance. Most charge $20-$149/mo membership on top of your medication costs. You keep your employer coverage either way.",
         ctas: TELEHEALTH_CTAS,
       },
     ],
     warnings: [
-      "Foundayo (Eli Lilly) can be taken any time of day with no food restrictions. Wegovy pill must be taken in the morning on an empty stomach with a 30-min wait before eating.",
+      "The two pills work differently. Foundayo (Eli Lilly) can be taken any time of day with no food restrictions. Wegovy pill has to be taken in the morning on an empty stomach, with a 30-minute wait before you eat anything.",
     ],
   },
 
@@ -210,21 +215,21 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Check what your plan covers",
-        body: "Call your insurer: “Is Wegovy or Zepbound covered for weight management?” One may be covered and not the other. Ask about tier and prior auth requirements.",
+        body: "Call your insurer and ask: “Is Wegovy or Zepbound covered for weight management?” One may be covered and not the other. While you're on the phone, ask about your copay (what you'd pay at the pharmacy), what tier the drug is on (the plan's category that sets your cost), and whether prior authorization is required — that's when your doctor formally asks the insurer for permission to cover the drug.",
       },
       {
         title: "Get prescribed",
-        body: "Your PCP or an obesity medicine specialist can prescribe. If they won't, telehealth providers (Ro, Found, PlushCare) can prescribe and work with your existing insurance.",
+        body: "Your own primary care doctor or an obesity medicine specialist can write the prescription. That's the cheapest path — you're already paying for those visits through insurance. If your doctor won't prescribe, telehealth providers like Ro, Found, or PlushCare can prescribe and work with your existing insurance. Telehealth runs about $20-$149/mo in membership fees on top of your medication costs.",
         ctas: TELEHEALTH_CTAS,
       },
       {
         title: "Manufacturer savings",
-        body: "Zepbound: Lilly savings card can reduce copay. Wegovy: NovoCare savings offer. These stack with your insurance coverage.",
+        body: "Zepbound has a Lilly savings card that reduces your copay (what you pay at the pharmacy). Wegovy has a NovoCare savings offer that does the same. These stack on top of your insurance coverage, so you can use both.",
         ctas: [LILLY_SAVINGS, NOVOCARE_SAVINGS],
       },
       {
         title: "If denied",
-        body: "Your doctor can file prior authorization. If PA is denied, they can appeal or request a peer-to-peer review. See the “denied” path for the full playbook.",
+        body: "Your doctor can file a prior authorization (the formal request to your insurer to cover the drug). If that's denied, they can appeal, or do something called a peer-to-peer review — where your doctor speaks directly with the insurance company's medical director and argues your case. See the “denied” path on this site for the full playbook.",
       },
     ],
   },
@@ -236,27 +241,27 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "What it is",
-        body: "A temporary Medicare program running July 1, 2026 through December 31, 2027. Eligible Medicare Part D beneficiaries pay $50/month for covered GLP-1 medications.",
+        body: "A temporary Medicare program running from July 1, 2026 through December 31, 2027. If you qualify and have Medicare Part D, you'll pay $50/month for covered GLP-1 medications instead of the full price.",
       },
       {
         title: "Covered drugs",
-        body: "Foundayo (pill), Wegovy injection and pill, and Zepbound KwikPen. NOT Ozempic (diabetes only) or compounded versions.",
+        body: "Foundayo (pill), Wegovy (injection and pill), and the Zepbound KwikPen (a pre-filled injector pen). Ozempic is NOT covered — it's only approved for type 2 diabetes through Medicare. Compounded versions are NOT covered either.",
       },
       {
         title: "Who qualifies",
-        body: "Must be enrolled in Medicare Part D. BMI of 30+ OR BMI 27+ with a weight-related condition (heart disease, prediabetes, high blood pressure, etc.). Your prescriber must attest to eligibility.",
+        body: "Three things have to be true. (1) You're enrolled in Medicare Part D. (2) Your BMI is 30 or higher — OR 27+ with a weight-related condition like heart disease, prediabetes, high blood pressure, etc. (3) Your prescriber confirms in writing that you meet the criteria.",
       },
       {
         title: "How to enroll",
-        body: "Your Part D plan does NOT need to opt in. A central Medicare processor handles approvals and claims directly. Talk to your doctor about submitting the prior authorization when the program opens.",
+        body: "Your Part D plan does NOT need to opt in — this works across all Part D plans automatically. A central Medicare processor handles the approval and the pharmacy claims directly. When the program opens, talk to your doctor about submitting the prior authorization (the formal request to cover the drug).",
       },
       {
         title: "Key detail",
-        body: "If you're already on a GLP-1, your prescriber attests to your ORIGINAL qualifying BMI, not your current weight. So weight loss doesn't disqualify you.",
+        body: "If you're already on a GLP-1 and have lost weight, don't worry. Your prescriber confirms your ORIGINAL qualifying BMI, not your current weight. Losing weight on the drug doesn't disqualify you from staying on it.",
       },
     ],
     warnings: [
-      "The BALANCE Model (longer-term program) has been delayed indefinitely. The Bridge program is extended through 2027, but there is no guarantee of what comes after.",
+      "There was a longer-term program called the BALANCE Model that was supposed to follow this one — it's been delayed indefinitely. The Bridge program is extended through 2027, but there's no guarantee yet of what happens after.",
     ],
   },
 
@@ -267,15 +272,15 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Eligibility checklist",
-        body: "1) Active Medicare Part D enrollment. 2) BMI 30+ OR BMI 27+ with at least one: heart disease, prediabetes/type 2 diabetes, high blood pressure, high cholesterol, or obstructive sleep apnea. 3) Prescriber attestation.",
+        body: "Three things you need: (1) active Medicare Part D enrollment, (2) BMI 30+ — OR BMI 27+ with at least one of these conditions: heart disease, prediabetes or type 2 diabetes, high blood pressure, high cholesterol, or obstructive sleep apnea, and (3) your prescriber's written confirmation.",
       },
       {
         title: "Next step",
-        body: "Schedule a visit with your doctor before July 1. Ask them to document your BMI and qualifying conditions now, so the prior authorization is ready to submit when the program opens.",
+        body: "Schedule a visit with your doctor before July 1, 2026. Ask them to document your BMI and any qualifying conditions in your chart now. That way the prior authorization (the paperwork asking Medicare to cover the drug) is ready to submit the day the program opens.",
       },
       {
         title: "If you don't qualify",
-        body: "Self-pay options exist: Foundayo at $149/mo, LillyDirect Zepbound at $299-449/mo, or NovoCare Wegovy at $499/mo. All available regardless of insurance status.",
+        body: "You can still get a GLP-1 by paying out of pocket. Self-pay means you're paying the full price yourself without using insurance — and these prices come directly from the drug manufacturer. Foundayo: $149/mo. Zepbound: $299-449/mo through LillyDirect. Wegovy: $499/mo through NovoCare.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
     ],
@@ -288,16 +293,16 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Current Medicare coverage",
-        body: "Medicare Part D does NOT cover GLP-1s for weight loss. It covers Ozempic and Mounjaro for type 2 diabetes only. If you have T2D, your doctor can prescribe for that indication.",
+        body: "Right now, Medicare Part D does NOT cover GLP-1s for weight loss. It does cover Ozempic and Mounjaro for type 2 diabetes. If you have T2D, your doctor can prescribe one of those for the diabetes — and weight loss may follow as a side benefit.",
       },
       {
         title: "Self-pay options (no insurance needed)",
-        body: "Foundayo pill: $149/mo via LillyDirect. Zepbound injection: $299/mo (2.5mg), $399/mo (5mg), $449/mo (7.5-15mg) via LillyDirect. Wegovy: $499/mo via NovoCare Pharmacy.",
+        body: "Self-pay means you pay the full price yourself, no insurance involved. These prices come straight from the drug makers. Foundayo pill: $149/mo via LillyDirect. Zepbound injection: $299/mo (2.5mg starter dose), $399/mo (5mg), or $449/mo (higher doses) via LillyDirect. Wegovy: $499/mo via NovoCare Pharmacy.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
       {
         title: "Consider waiting",
-        body: "If July is close, the Bridge program at $50/mo may be worth the wait vs. paying $149-499/mo out of pocket. Discuss timing with your doctor.",
+        body: "If July 2026 is close for you, the Bridge program at $50/mo may be worth the wait vs. paying $149-499/mo out of pocket right now. Talk it through with your doctor — the right answer depends on how urgent things are for you.",
       },
     ],
   },
@@ -307,21 +312,22 @@ export const TREE: Record<string, TreeNode> = {
     id: "MEDICAID",
     title: "Medicaid coverage for GLP-1s",
     steps: [
+      PRESCRIPTION_BASICS,
       {
         title: "Current landscape",
-        body: "Only some state Medicaid programs cover GLP-1s for weight loss. Coverage varies dramatically by state. Many cover for type 2 diabetes but not obesity.",
+        body: "Whether Medicaid covers GLP-1s for weight loss depends entirely on what state you're in. Some states cover them, many don't. Plenty of states cover them for type 2 diabetes but not for obesity.",
       },
       {
         title: "Check your state",
-        body: "Call your Medicaid plan directly and ask about coverage for Wegovy or Zepbound for weight management. The answer depends on your specific state and managed care plan.",
+        body: "Call your Medicaid plan directly and ask: “Does my plan cover Wegovy or Zepbound for weight management?” The answer depends on your specific state and which managed care plan you're on.",
       },
       {
         title: "BALANCE Model",
-        body: "The CMS BALANCE Model may expand Medicaid GLP-1 coverage starting as early as May 2026 for states that opt in. Not all states will participate. Check if your state has opted in.",
+        body: "There's a federal pilot called the CMS BALANCE Model that may expand Medicaid GLP-1 coverage starting as early as May 2026 — but only in states that opt in. Not all states will. Ask whether your state has.",
       },
       {
         title: "If not covered",
-        body: "Self-pay: Foundayo at $149/mo, Zepbound at $299-449/mo via LillyDirect, Wegovy at $499/mo via NovoCare. Some telehealth providers also offer lower-cost options.",
+        body: "You can pay out of pocket regardless of Medicaid. Self-pay means paying the full price yourself — these come from the drug makers directly. Foundayo $149/mo, Zepbound $299-449/mo via LillyDirect, Wegovy $499/mo via NovoCare. Telehealth providers like Ro or PlushCare may bundle the prescription and ongoing care — they charge $20-$149/mo membership on top of the medication.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE, ...TELEHEALTH_CTAS],
       },
     ],
@@ -334,24 +340,24 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Check what your plan covers first",
-        body: "Whether you bought through healthcare.gov or directly from a carrier like Blue Shield, check if your specific plan covers GLP-1s for weight management. Call the number on your card.",
+        body: "Whether you bought through healthcare.gov or directly from a carrier like Blue Shield, the first step is figuring out whether your specific plan covers GLP-1s for weight management. Call the number on your insurance card and ask. Coverage varies wildly between plans.",
       },
       {
-        title: "Key distinction",
-        body: "Many individual plans exclude weight loss medications entirely. Even “good” plans may require prior authorization and have strict criteria (BMI thresholds, documented diet attempts).",
+        title: "Heads up",
+        body: "Many individual plans exclude weight loss medications entirely — meaning they won't cover them no matter what. Even “good” plans often require prior authorization (your doctor formally asking permission) and have strict rules: a minimum BMI, step therapy (you have to try a cheaper drug first), or documented diet attempts.",
       },
       {
         title: "If covered",
-        body: "Follow the same path as employer insurance: get a prescription, use manufacturer savings cards to reduce copay, file prior auth if required.",
+        body: "You're in good shape. Follow the same path as employer insurance: get a prescription, use the manufacturer's savings card to lower your copay (what you pay at the pharmacy), and file a prior authorization if your plan requires one.",
       },
       {
         title: "If not covered or too restrictive",
-        body: "You can use self-pay options alongside your insurance for everything else. Foundayo: $149/mo. LillyDirect Zepbound: $299-449/mo. NovoCare Wegovy: $499/mo.",
+        body: "You can use self-pay for the medication while keeping insurance for everything else. Self-pay means paying full price without insurance — and these prices come from the manufacturer directly. Foundayo: $149/mo. Zepbound via LillyDirect: $299-449/mo. Wegovy via NovoCare: $499/mo.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
       {
         title: "Open enrollment tip",
-        body: "When shopping for next year's plan, check each plan's covered drug list BEFORE enrolling. Look for plans that cover Wegovy or Zepbound on a reasonable tier.",
+        body: "When you're shopping for next year's plan, check each plan's covered drug list BEFORE enrolling. Look for plans that cover Wegovy or Zepbound on a reasonable tier — the lower the tier number, the less it costs you per fill.",
       },
     ],
   },
@@ -363,15 +369,15 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "TRICARE",
-        body: "TRICARE covers some GLP-1s with prior authorization. Coverage depends on your specific TRICARE plan (Prime, Select, etc.) and the prescribing indication. Call TRICARE directly to confirm.",
+        body: "TRICARE covers some GLP-1s, but usually requires prior authorization — that's when your doctor formally asks TRICARE for permission to cover the drug before they'll pay. Coverage depends on which TRICARE plan you have (Prime, Select, etc.) and what the drug is being prescribed for. Call TRICARE directly to confirm.",
       },
       {
         title: "VA",
-        body: "The VA's covered drug list includes some GLP-1s. Availability may vary by VA facility. Talk to your VA provider about what's available at your location.",
+        body: "The VA's covered drug list includes some GLP-1s. What's actually available may vary by VA facility. Ask your VA provider what's stocked at your specific location.",
       },
       {
         title: "If not covered through military benefits",
-        body: "Self-pay options work for anyone: Foundayo $149/mo, LillyDirect Zepbound $299-449/mo, NovoCare Wegovy $499/mo.",
+        body: "Self-pay is open to anyone — it means paying the full price yourself without using insurance. These prices come directly from the drug makers. Foundayo $149/mo, Zepbound $299-449/mo via LillyDirect, Wegovy $499/mo via NovoCare.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
     ],
@@ -382,24 +388,25 @@ export const TREE: Record<string, TreeNode> = {
     id: "UNINSURED_PILL",
     title: "No insurance + oral pill options",
     steps: [
+      PRESCRIPTION_BASICS,
       {
         title: "Best value: Foundayo",
-        body: "$149/mo self-pay through LillyDirect or participating pharmacies. Can be taken any time of day, no food restrictions. Eli Lilly's newest FDA-approved option (April 2026).",
+        body: "$149/mo through LillyDirect or participating pharmacies — that's the self-pay price (what you pay out of pocket, no insurance needed). Take it any time of day, no food restrictions. This is Eli Lilly's newest FDA-approved option (April 2026).",
         ctas: [FOUNDAYO_DIRECT],
       },
       {
         title: "Alternative: Wegovy pill",
-        body: "$499/mo through NovoCare Pharmacy. Must be taken in the morning on empty stomach, wait 30 min before eating. More expensive but may achieve slightly higher weight loss (~14% vs ~12%).",
+        body: "$499/mo through NovoCare Pharmacy. You take it in the morning on an empty stomach and wait 30 minutes before eating anything. It's more expensive, but may produce slightly more weight loss (~14% vs ~12% for Foundayo).",
         ctas: [NOVOCARE],
       },
       {
         title: "How to get prescribed",
-        body: "You need a prescription from a licensed provider. Telehealth options: Ro, Found, ShedRx, LifeMD all offer online consultations. Some have $0 initial consult fees.",
+        body: "Since you don't have insurance, telehealth is usually the easiest path to a prescription. Providers like Ro, Found, ShedRx, and LifeMD offer online consultations. They charge $20-$149/mo membership, which covers your initial visit, ongoing check-ins, and dose adjustments. The medication is a separate cost.",
         ctas: TELEHEALTH_CTAS,
       },
       {
         title: "GoodRx",
-        body: "GoodRx now offers Wegovy and Ozempic at $499/mo at 70,000+ retail pharmacies through their Novo Nordisk partnership.",
+        body: "GoodRx has a partnership with Novo Nordisk that offers Wegovy and Ozempic at $499/mo at 70,000+ retail pharmacies — useful if you'd rather pick up at CVS or Walgreens than ship from a mail-order pharmacy.",
         ctas: [GOODRX],
       },
     ],
@@ -410,24 +417,25 @@ export const TREE: Record<string, TreeNode> = {
     id: "UNINSURED_INJECTION",
     title: "No insurance + injection options",
     steps: [
+      PRESCRIPTION_BASICS,
       {
         title: "Most affordable brand-name: Zepbound vials",
-        body: "$299/mo (2.5mg), $399/mo (5mg), $449/mo (7.5-15mg) through LillyDirect. These are vials you draw with a syringe, not auto-injector pens.",
+        body: "$299/mo (2.5mg starter dose), $399/mo (5mg), or $449/mo (higher doses) through LillyDirect. These are vials you draw with a syringe yourself — not pre-filled pens. Self-pay only, no insurance involved.",
         ctas: [LILLY_DIRECT],
       },
       {
         title: "Zepbound KwikPen",
-        body: "Easier to use than vials (pre-filled pen). Check LillyDirect for current pricing.",
+        body: "If drawing from a vial sounds intimidating, the KwikPen is a pre-filled injector pen — much simpler to use. Check LillyDirect for current self-pay pricing.",
         ctas: [LILLY_DIRECT],
       },
       {
         title: "Wegovy injection",
-        body: "$499/mo through NovoCare Pharmacy or GoodRx at participating pharmacies.",
+        body: "$499/mo through NovoCare Pharmacy, or via GoodRx at participating retail pharmacies if you'd rather pick up locally.",
         ctas: [NOVOCARE, GOODRX],
       },
       {
         title: "Wegovy subscription",
-        body: "Novo Nordisk now offers $249/mo at 12-month commitment through Ro, WeightWatchers, and LifeMD.",
+        body: "Novo Nordisk offers Wegovy at $249/mo if you commit to 12 months. Available through Ro, WeightWatchers, or LifeMD. Cheaper per month than buying month-to-month, but you're locked in for a year.",
         ctas: [
           { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
           { label: "Check WeightWatchers", url: "#affiliate-placeholder", affiliate: true },
@@ -436,12 +444,12 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "How to get prescribed",
-        body: "Telehealth: Ro, Found, ShedRx, LifeMD, PlushCare. Many handle the prescription and ship medication to your door.",
+        body: "Without insurance, telehealth is usually the easiest path. Ro, Found, ShedRx, LifeMD, and PlushCare all handle the consultation and ship the medication to your door. They charge $20-$149/mo membership, which covers your visit and ongoing check-ins. Medication is a separate cost.",
         ctas: TELEHEALTH_CTAS,
       },
       {
         title: "Walmart pharmacies",
-        body: "Walmart's 4,600 pharmacies offer Zepbound vials at discounted self-pay pricing.",
+        body: "Walmart's 4,600 pharmacies offer Zepbound vials at discounted self-pay prices — worth checking if there's one near you.",
       },
     ],
   },
@@ -451,14 +459,15 @@ export const TREE: Record<string, TreeNode> = {
     id: "UNINSURED_ALL",
     title: "All options without insurance (cheapest first)",
     steps: [
+      PRESCRIPTION_BASICS,
       {
         title: "$149/mo: Foundayo pill",
-        body: "Eli Lilly's oral GLP-1. No needles, take any time of day. Available through LillyDirect and retail pharmacies. Newest option (FDA approved April 2026).",
+        body: "Eli Lilly's oral GLP-1 — no needles, take it any time of day. Available through LillyDirect and retail pharmacies. The newest FDA-approved option (April 2026). Self-pay only, meaning you pay full price without insurance.",
         ctas: [FOUNDAYO_DIRECT],
       },
       {
         title: "$249/mo: Wegovy subscription",
-        body: "12-month commitment through Ro, WeightWatchers, or LifeMD. Injection or pill.",
+        body: "12-month commitment through Ro, WeightWatchers, or LifeMD. Includes the injection or pill. The cheapest way to get Wegovy if you're willing to lock in for a year.",
         ctas: [
           { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
           { label: "Check WeightWatchers", url: "#affiliate-placeholder", affiliate: true },
@@ -467,32 +476,32 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "$299/mo: Zepbound vials (2.5mg)",
-        body: "Starter dose tirzepatide injection via LillyDirect. Also available at Walmart pharmacies.",
+        body: "Starter dose. You draw from a vial with a syringe yourself (not a pre-filled pen). Available through LillyDirect or at Walmart pharmacies. This is the self-pay price set by the manufacturer.",
         ctas: [LILLY_DIRECT],
       },
       {
         title: "$399/mo: Zepbound vials (5mg)",
-        body: "Via LillyDirect.",
+        body: "Next dose up. Same vial format as the starter dose, through LillyDirect.",
         ctas: [LILLY_DIRECT],
       },
       {
         title: "$449/mo: Zepbound vials (7.5-15mg)",
-        body: "All higher doses via LillyDirect.",
+        body: "All the higher doses (7.5mg, 10mg, 12.5mg, 15mg). Through LillyDirect.",
         ctas: [LILLY_DIRECT],
       },
       {
         title: "$499/mo: Wegovy injection or pill (month-to-month)",
-        body: "Through NovoCare Pharmacy or GoodRx at retail pharmacies.",
+        body: "Through NovoCare Pharmacy or GoodRx at retail pharmacies. The most flexible option (no long-term commitment), but also the highest price tag.",
         ctas: [NOVOCARE, GOODRX],
       },
       {
         title: "Telehealth to get prescribed",
-        body: "Ro, Found, ShedRx, PlushCare, LifeMD. Many bundle the consultation and prescription into one visit.",
+        body: "Before any of the above will sell to you, you need a prescription. Without insurance, telehealth is usually the easiest route. Ro, Found, ShedRx, PlushCare, and LifeMD bundle the consultation, prescription, and shipping. Most charge $20-$149/mo membership, which covers the visit and ongoing check-ins. The medication itself is a separate cost.",
         ctas: TELEHEALTH_CTAS,
       },
     ],
     warnings: [
-      "Compounded GLP-1s were previously available at $99-200/mo but the FDA has ended shortage designations and is moving to permanently ban large-scale compounding. Some 503A pharmacies still operate but availability is shrinking and legal status is uncertain.",
+      "You may have heard about compounded GLP-1s at $99-200/mo. The FDA has ended the shortage designations that made them legal at scale, and is moving to permanently ban large-scale compounding. Some small 503A pharmacies still operate, but availability is shrinking and the legal status is uncertain — be cautious about anyone marketing them as cheaper alternatives.",
     ],
   },
 
@@ -503,11 +512,11 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "How to find out",
-        body: "Check your wallet for an insurance card. The card will say the carrier name and plan type. If you get insurance through work, call your HR department.",
+        body: "Check your wallet for an insurance card — it'll have the carrier name (like Aetna or Blue Cross) and the plan type printed on it. If you get insurance through work, you can also call your HR department, who can tell you exactly what plan you're on.",
       },
       {
         title: "Quick check tools",
-        body: "Ro offers a free GLP-1 Insurance Coverage Checker. Found will call your insurer on your behalf for free. Weight Watchers has a Cost Estimator tool. NovoCare has its own coverage checker for Wegovy.",
+        body: "Several services will check your coverage for you, free. Ro has a GLP-1 Insurance Coverage Checker. Found will call your insurer on your behalf and report back. Weight Watchers has a Cost Estimator. NovoCare's coverage checker tells you whether Wegovy is on your plan.",
         ctas: [
           { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
           { label: "Check Found", url: "#affiliate-placeholder", affiliate: true },
@@ -517,7 +526,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "If you truly have no insurance",
-        body: "You can still access GLP-1s through self-pay. Foundayo starts at $149/mo. Zepbound starts at $299/mo. No insurance required.",
+        body: "You can still get GLP-1s — they just cost more out of pocket. Self-pay means paying the full price yourself, with prices set directly by the drug makers. Foundayo starts at $149/mo, Zepbound starts at $299/mo.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT],
       },
     ],
@@ -530,22 +539,22 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Check manufacturer savings first",
-        body: "Zepbound: Lilly savings card. Wegovy: NovoCare savings offer. A DoseSpot study found patients overpaid by $10M in one quarter, mostly from missed manufacturer programs.",
+        body: "Most people leave money on the table here. Zepbound has a Lilly savings card; Wegovy has a NovoCare savings offer. Both are manufacturer coupons that reduce what you pay at the pharmacy. A 2025 study found patients overpaid by $10M in one quarter — mostly from missing these programs.",
         ctas: [LILLY_SAVINGS, NOVOCARE_SAVINGS],
       },
       {
         title: "Compare pharmacy prices",
-        body: "Prices vary between pharmacies. Walmart, Costco, and mail-order pharmacies often have lower prices. GoodRx can show price comparisons.",
+        body: "Same drug, same dose, different prices. Walmart, Costco, and mail-order pharmacies often beat the chains. GoodRx can show you a side-by-side price comparison for your local pharmacies in a few seconds.",
         ctas: [GOODRX],
       },
       {
         title: "Consider LillyDirect or NovoCare direct",
-        body: "Buying direct from the manufacturer often costs less than retail pharmacy, especially without insurance.",
+        body: "Buying directly from the manufacturer often costs less than going through a retail pharmacy, especially if you're paying without insurance.",
         ctas: [LILLY_DIRECT, NOVOCARE],
       },
       {
         title: "Wegovy subscription",
-        body: "Novo Nordisk now offers $249/mo with 12-month commitment through Ro, WeightWatchers, LifeMD.",
+        body: "Novo Nordisk's $249/mo subscription is cheaper than buying Wegovy month-to-month — but you commit to 12 months through Ro, WeightWatchers, or LifeMD. Worth it if you're confident you'll stay on the drug for the year.",
         ctas: [
           { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
           { label: "Check WeightWatchers", url: "#affiliate-placeholder", affiliate: true },
@@ -554,12 +563,12 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Switch medications",
-        body: "Foundayo at $149/mo self-pay is significantly cheaper than Wegovy or Zepbound injections. Discuss with your prescriber.",
+        body: "Foundayo at $149/mo is significantly cheaper than Wegovy or Zepbound injections. If cost is your main issue and you're open to a pill, ask your prescriber whether switching to Foundayo makes sense for you.",
         ctas: [FOUNDAYO_DIRECT],
       },
       {
         title: "Stack savings",
-        body: "Discounted pharmacy gift cards (CardCash for CVS/Walgreens) + manufacturer savings + GoodRx coupons can be combined.",
+        body: "If you really want to squeeze costs down: buy discounted pharmacy gift cards (CardCash sells them at a discount for CVS and Walgreens), combine with a manufacturer savings card, and use a GoodRx coupon. All three can stack together.",
       },
     ],
   },
@@ -571,20 +580,20 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Key question",
-        body: "Make sure your new provider can prescribe your current medication at your current dose to avoid a gap or having to re-titrate from scratch.",
+        body: "Before you switch, make sure your new provider can prescribe your current medication at the same dose you're on. Otherwise you risk a gap — or having to start over from the lowest dose and re-titrate (slowly building back up week by week to where you are now), which takes weeks of stomach side effects.",
       },
       {
         title: "Telehealth options",
-        body: "Ro, Found, ShedRx, PlushCare, and LifeMD all offer ongoing GLP-1 management. Compare on: insurance support, messaging access, follow-up frequency.",
+        body: "Ro, Found, ShedRx, PlushCare, and LifeMD all offer ongoing GLP-1 management. They charge $20-$149/mo membership which covers your visits and ongoing check-ins. When comparing, look at: how well they handle insurance (if you have it), how quickly they reply to messages, and how often they check in with you.",
         ctas: TELEHEALTH_CTAS,
       },
       {
         title: "Transfer your prescription",
-        body: "Ask your new provider to contact your current pharmacy for prescription transfer.",
+        body: "Once you've picked a new provider, ask them to contact your current pharmacy and transfer your prescription. They handle all the pharmacy-to-pharmacy paperwork — you don't have to do anything.",
       },
       {
         title: "Timing",
-        body: "Start the new provider process before your current prescription runs out. Build in at least a week of overlap.",
+        body: "Start signing up with the new provider before your current prescription runs out. Build in at least a week of overlap so you don't end up between doses.",
       },
     ],
   },
@@ -596,19 +605,19 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Current FDA-approved options for weight loss",
-        body: "Injections: Wegovy (semaglutide), Zepbound (tirzepatide). Pills: Wegovy tablet (semaglutide), Foundayo (orforglipron). Your prescriber helps determine which is right.",
+        body: "Injections: Wegovy (semaglutide) and Zepbound (tirzepatide). Pills: Wegovy tablet (semaglutide) and Foundayo (orforglipron). Your prescriber will help figure out which is the right fit for you.",
       },
       {
         title: "Dose transition",
-        body: "Switching usually means starting at the new drug's lowest dose and re-titrating up. Your prescriber will create a transition plan.",
+        body: "Switching to a different GLP-1 usually means starting at the new drug's lowest dose and titrating up — that's the medical term for gradually increasing your dose over weeks. Your prescriber will write a transition plan.",
       },
       {
         title: "Insurance may differ",
-        body: "Your plan may cover one GLP-1 but not another. Check what your plan covers before switching.",
+        body: "Your plan may cover one GLP-1 and not another. Check what your plan covers before going through the switch — otherwise you might land on something that costs you significantly more.",
       },
       {
         title: "Talk to your prescriber",
-        body: "This is a clinical decision. Discuss why you want to switch (side effects, plateau, cost, convenience).",
+        body: "This is a clinical decision, not just a preference. Tell them why you want to switch — side effects, hitting a plateau, cost, or convenience — and work it through together.",
       },
     ],
   },
@@ -620,16 +629,16 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Two pill options now exist",
-        body: "Foundayo (orforglipron by Eli Lilly): take any time, no food restrictions, $149/mo self-pay or $25/mo with commercial insurance savings card. Wegovy pill (semaglutide by Novo Nordisk): morning on empty stomach, 30-min food wait.",
+        body: "Foundayo (orforglipron, by Eli Lilly): take it any time, no food restrictions. $149/mo paying full price out of pocket, or as low as $25/mo with a commercial insurance savings card (a manufacturer coupon that lowers your copay). Wegovy pill (semaglutide, by Novo Nordisk): morning on an empty stomach, then wait 30 min before eating.",
         ctas: [FOUNDAYO_DIRECT, FOUNDAYO_SAVINGS, NOVOCARE],
       },
       {
         title: "Clinical note",
-        body: "Injectable GLP-1s generally produce more weight loss than oral versions. Discuss with your prescriber whether the convenience tradeoff is right for your goals.",
+        body: "Injectable GLP-1s generally produce more weight loss than the pill versions. Talk with your prescriber about whether the convenience of a pill is worth a possibly smaller result for your specific goals.",
       },
       {
         title: "Transition",
-        body: "Your prescriber will determine the appropriate starting dose. You may need to re-titrate.",
+        body: "Your prescriber will pick the right starting dose. You may need to titrate — meaning gradually increase the dose over several weeks until you reach your target.",
       },
     ],
   },
@@ -641,32 +650,32 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Read the denial letter",
-        body: "Your insurer must provide a specific reason. Common: BMI doesn't meet threshold, haven't completed step therapy, the drug isn't on your plan's covered list.",
+        body: "Your insurer is legally required to give you a specific reason in writing. The most common ones: your BMI doesn't meet their minimum, you haven't done step therapy (where the insurer requires you to try a cheaper drug first), or the drug isn't on your plan's covered list.",
       },
       {
         title: "Ask your doctor to appeal",
-        body: "File an appeal with additional documentation. A letter of medical necessity can make the difference.",
+        body: "A denial isn't final. Your doctor's office can file an appeal with additional documentation. The most important piece is usually a letter of medical necessity — a letter from your doctor explaining specifically why you need this drug. That one document overturns a lot of denials.",
       },
       {
         title: "Peer-to-peer review",
-        body: "Your doctor can request a peer-to-peer review, speaking directly with the insurance company's medical director. Often overturns denials.",
+        body: "Your doctor can also request a peer-to-peer review — where they speak directly with the insurance company's medical director and argue your case in person (or by phone). These often overturn denials that the paperwork-only appeal didn't.",
       },
       {
         title: "External appeal",
-        body: "If internal appeals fail, you have the right to an external (independent) review. Your denial letter should include instructions.",
+        body: "If you've used up your insurer's internal appeals, you have the right to an external (independent) review by a third party. Your denial letter should include instructions for how to start one.",
       },
       {
         title: "In parallel: Start self-pay",
-        body: "While appealing, begin treatment through self-pay. Foundayo $149/mo, Zepbound $299-449/mo via LillyDirect. If appeal succeeds, switch back.",
+        body: "Appeals can take weeks. You don't have to sit around waiting — you can start self-pay (paying out of pocket directly to the drug maker) while the appeal is in progress. Foundayo $149/mo, Zepbound $299-449/mo via LillyDirect. If the appeal succeeds, you switch back to using insurance.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT],
       },
       {
         title: "HR escalation (employer plans)",
-        body: "Your doctor can write a formal coverage request letter to your HR department asking the plan to make an exception and cover the drug.",
+        body: "If you're on an employer plan, your doctor can write a formal coverage request letter to your HR department asking the plan to make an exception and cover the drug. HR sometimes has leverage with the insurer that individuals don't.",
       },
     ],
     warnings: [
-      "Appeals can take 30+ days. Don't wait to start exploring self-pay alternatives in parallel if timing matters.",
+      "Appeals can take 30+ days. If timing matters, don't wait — explore self-pay alternatives in parallel so you're not stuck without medication while the paperwork moves.",
     ],
   },
 
@@ -676,26 +685,26 @@ export const TREE: Record<string, TreeNode> = {
     title: "Your doctor won't prescribe a GLP-1",
     steps: [
       {
-        title: "This is common",
-        body: "Many PCPs are unfamiliar or uncomfortable with GLP-1 prescribing for weight management. This doesn't mean you don't qualify.",
+        title: "This is more common than you'd think",
+        body: "Lots of primary care doctors are still unfamiliar or uncomfortable with prescribing GLP-1s for weight management. If yours says no, it usually doesn't mean you don't qualify — it means your doctor doesn't feel confident prescribing in this area.",
       },
       {
         title: "Ask for a referral",
-        body: "Request a referral to an obesity medicine specialist or endocrinologist.",
+        body: "Ask for a referral to either an obesity medicine specialist (a doctor whose specialty is treating obesity) or an endocrinologist (a hormone specialist who treats things like diabetes and metabolic conditions). Both routinely prescribe GLP-1s.",
       },
       {
         title: "Telehealth",
-        body: "Licensed telehealth providers like Ro, Found, ShedRx, PlushCare, and LifeMD specialize in GLP-1 prescribing. They can prescribe alongside your existing doctor.",
+        body: "Licensed telehealth providers like Ro, Found, ShedRx, PlushCare, and LifeMD specialize in GLP-1 prescribing — it's a big part of what they do. They can prescribe in parallel with your existing doctor. They charge $20-$149/mo membership, which covers visits and check-ins; medication is a separate cost.",
         ctas: TELEHEALTH_CTAS,
       },
       {
         title: "LillyDirect",
-        body: "Eli Lilly's direct platform includes a telehealth consultation through their partner FORM Health. They can prescribe Zepbound or Foundayo and ship directly.",
+        body: "Eli Lilly's direct platform includes telehealth through their partner FORM Health. They can prescribe Zepbound or Foundayo and ship the medication straight to you.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT],
       },
       {
         title: "Keep your PCP informed",
-        body: "Even if prescribed through telehealth, let your PCP know so they can monitor your overall health.",
+        body: "Even if you get prescribed through telehealth, tell your regular doctor that you're starting a GLP-1. They should know about every medication you're on so they can keep an eye on your overall health.",
       },
     ],
   },
@@ -707,19 +716,19 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Call your insurer",
-        body: "Call the member services number on your card. Ask: “Why was my GLP-1 prescription denied? What would I need to get it approved?”",
+        body: "Call the member services number on your insurance card. Ask, in these words: “Why was my GLP-1 prescription denied, and what would I need to do to get it approved?” They'll tell you the specific reason — and what would fix it.",
       },
       {
         title: "Common denial reasons",
-        body: "Prior authorization not submitted yet. Step therapy needed. Not on your plan's covered list. BMI threshold not met.",
+        body: "Usually it's one of four things. A prior authorization (your doctor formally asking for permission) wasn't submitted. Step therapy is required (you have to try a cheaper drug first). The drug isn't on your plan's covered list. Or your BMI doesn't meet their minimum.",
       },
       {
-        title: "Next step depends on reason",
-        body: "If PA wasn't submitted: ask your doctor to submit it. If step therapy: ask what's required. If not on your plan's covered list: ask which GLP-1s ARE covered. If BMI: ask about documenting comorbidities.",
+        title: "Next step depends on the reason",
+        body: "If the prior auth wasn't submitted: ask your doctor to submit it. If step therapy is required: ask what cheaper drugs you need to try first. If it's not on your plan's covered list: ask which GLP-1s ARE covered and consider switching. If it's a BMI issue: ask your doctor about documenting any other weight-related conditions (called comorbidities) — things like high blood pressure or sleep apnea — that can flip the answer.",
       },
       {
         title: "Self-pay while you figure it out",
-        body: "Foundayo: $149/mo. LillyDirect Zepbound: $299-449/mo. No insurance needed.",
+        body: "While you sort this out, you can start self-pay — paying out of pocket directly to the drug maker — so you're not stuck waiting. Foundayo $149/mo. Zepbound via LillyDirect $299-449/mo.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT],
       },
     ],
@@ -732,32 +741,32 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "What happened",
-        body: "The FDA removed semaglutide and tirzepatide from the drug shortage list in early 2025. Grace periods for compounding pharmacies have passed. In April 2026, the FDA proposed permanently banning large-scale (503B) compounding of these drugs.",
+        body: "Compounded GLP-1s exist because the FDA had semaglutide (in Wegovy/Ozempic) and tirzepatide (in Zepbound/Mounjaro) on its official drug shortage list. Once a drug comes off that list, compounding pharmacies aren't legally allowed to keep making copies. The FDA took them off in early 2025, grace periods ended, and in April 2026 the FDA proposed permanently banning large-scale compounding of these drugs.",
       },
       {
         title: "What this means for you",
-        body: "Large-scale compounding facilities (503B) can no longer legally produce compounded semaglutide or tirzepatide. Some smaller 503A pharmacies continue under different legal rules, but the landscape is uncertain and narrowing.",
+        body: "Large-scale compounding facilities (called 503B pharmacies — these are big FDA-registered industrial compounders) can no longer legally produce these drugs. Some smaller 503A pharmacies (single-location compounders that mix prescriptions to order) are still operating under different rules, but the legal landscape is uncertain and shrinking.",
       },
       {
         title: "Transition options (cheapest first)",
-        body: "Foundayo pill: $149/mo, no needles, via LillyDirect. Zepbound vials: $299/mo (2.5mg) via LillyDirect. Wegovy subscription: $249/mo (12-month commitment). Wegovy month-to-month: $499/mo via NovoCare. All FDA-approved.",
+        body: "All of these are FDA-approved brand-name options. Foundayo pill: $149/mo, no needles, via LillyDirect. Zepbound vials: starts at $299/mo (2.5mg) via LillyDirect. Wegovy subscription: $249/mo (12-month commitment). Wegovy month-to-month: $499/mo via NovoCare.",
         ctas: [FOUNDAYO_DIRECT, LILLY_DIRECT, NOVOCARE],
       },
       {
         title: "Dose transition",
-        body: "Compounded doses may not map exactly to brand-name doses. Talk to a prescriber about the right starting dose. You may need to re-titrate.",
+        body: "Compounded doses don't always map exactly to brand-name doses — the formulations are different. Talk to a prescriber about the right starting dose on the new drug. You may need to titrate up gradually (re-build to your target dose over several weeks).",
       },
       {
         title: "If you have insurance",
-        body: "Check if your plan covers brand-name GLP-1s. With brand prices dropping, some plans have added coverage.",
+        body: "Check whether your plan covers brand-name GLP-1s for weight loss. With brand prices dropping in 2025-2026, some plans that didn't cover GLP-1s before have started to.",
       },
       {
         title: "Medicare: wait for the Bridge",
-        body: "If on Medicare, the Bridge program starts July 1, 2026 at $50/mo.",
+        body: "If you're on Medicare Part D, the Bridge program starts July 1, 2026 at $50/mo for covered GLP-1s — a much better deal than self-pay if you can hold out a few weeks.",
       },
     ],
     warnings: [
-      "Some telehealth providers advertising “compounded GLP-1s” may be operating in a legal gray area. The FDA has issued 50+ warning letters to compounders and distributors. Prioritize FDA-approved options for safety and supply reliability.",
+      "Be cautious of telehealth providers still advertising “compounded GLP-1s” — many are operating in a legal gray area. The FDA has issued 50+ warning letters to compounders and distributors. Stick with FDA-approved brand-name options where safety, supply, and legal status are clear.",
     ],
   },
 };
