@@ -27,7 +27,7 @@ export default function Home() {
               href="/quiz"
               className="inline-flex items-center justify-center rounded-full bg-teal-600 hover:bg-teal-700 active:bg-teal-800 text-white font-semibold text-lg px-8 py-4 shadow-lg shadow-teal-600/20 transition-colors"
             >
-              Find My GLP-1
+              Find Me a GLP-1
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="ml-2 w-5 h-5"
