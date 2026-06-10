@@ -44,7 +44,19 @@ const LILLY_DIRECT: Cta = {
 
 const NOVOCARE: Cta = {
   label: "Visit NovoCare",
-  url: "https://www.novocare.com/wegovy.html",
+  url: "https://www.novocare.com/patient/medicines/wegovy.html",
+  affiliate: false,
+};
+
+const NOVOCARE_SAVINGS: Cta = {
+  label: "NovoCare savings offer",
+  url: "https://www.novocare.com/patient/medicines/wegovy/savings-offer.html",
+  affiliate: false,
+};
+
+const NOVOCARE_COVERAGE: Cta = {
+  label: "NovoCare coverage checker",
+  url: "https://www.novocare.com/patient/medicines/wegovy/check-coverage.html",
   affiliate: false,
 };
 
@@ -156,7 +168,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "If covered",
         body: "Foundayo: as low as $25/mo with commercial coverage using Lilly's savings card. Wegovy pill: check NovoCare savings offer for copay reduction.",
-        ctas: [LILLY_DIRECT, NOVOCARE],
+        ctas: [LILLY_DIRECT, NOVOCARE_SAVINGS],
       },
       {
         title: "If denied",
@@ -190,7 +202,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Manufacturer savings",
         body: "Zepbound: Lilly savings card can reduce copay. Wegovy: NovoCare savings offer. These stack with your insurance coverage.",
-        ctas: [LILLY_DIRECT, NOVOCARE],
+        ctas: [LILLY_DIRECT, NOVOCARE_SAVINGS],
       },
       {
         title: "If denied",
@@ -477,11 +489,12 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Quick check tools",
-        body: "Ro offers a free GLP-1 Insurance Coverage Checker. Found will call your insurer on your behalf for free. Weight Watchers has a Cost Estimator tool.",
+        body: "Ro offers a free GLP-1 Insurance Coverage Checker. Found will call your insurer on your behalf for free. Weight Watchers has a Cost Estimator tool. NovoCare has its own coverage checker for Wegovy.",
         ctas: [
           { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
           { label: "Check Found", url: "#affiliate-placeholder", affiliate: true },
           { label: "Check WeightWatchers", url: "#affiliate-placeholder", affiliate: true },
+          NOVOCARE_COVERAGE,
         ],
       },
       {
@@ -500,7 +513,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Check manufacturer savings first",
         body: "Zepbound: Lilly savings card. Wegovy: NovoCare savings offer. A DoseSpot study found patients overpaid by $10M in one quarter, mostly from missed manufacturer programs.",
-        ctas: [LILLY_DIRECT, NOVOCARE],
+        ctas: [LILLY_DIRECT, NOVOCARE_SAVINGS],
       },
       {
         title: "Compare pharmacy prices",
