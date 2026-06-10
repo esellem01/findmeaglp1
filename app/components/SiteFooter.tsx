@@ -8,6 +8,9 @@ export default function SiteFooter() {
           © {new Date().getFullYear()} FindMeAGLP1 · A free resource, not medical advice
         </p>
         <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm">
+          <Link href="/faq" className="text-teal-700 hover:text-teal-900 hover:underline underline-offset-2">
+            FAQ
+          </Link>
           <Link href="/about" className="text-teal-700 hover:text-teal-900 hover:underline underline-offset-2">
             About &amp; Disclaimer
           </Link>

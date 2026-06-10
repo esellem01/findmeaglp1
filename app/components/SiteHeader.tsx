@@ -16,9 +16,18 @@ export default function SiteHeader() {
             FindMeAGLP1
           </span>
         </Link>
-        <span className="text-[11px] sm:text-xs text-teal-700/70 font-medium">
-          Not medical advice
-        </span>
+        <nav className="flex items-center gap-3 sm:gap-4">
+          <Link
+            href="/faq"
+            className="text-xs sm:text-sm font-medium text-teal-700 hover:text-teal-900 transition-colors"
+          >
+            FAQ
+          </Link>
+          <span aria-hidden className="text-teal-200">·</span>
+          <span className="text-[11px] sm:text-xs text-teal-700/70 font-medium">
+            Not medical advice
+          </span>
+        </nav>
       </div>
     </header>
   );
