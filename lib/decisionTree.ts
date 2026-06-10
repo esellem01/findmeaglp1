@@ -38,7 +38,13 @@ const TELEHEALTH_CTAS: Cta[] = [
 
 const LILLY_DIRECT: Cta = {
   label: "Visit LillyDirect",
-  url: "https://lillydirect.lilly.com/",
+  url: "https://www.lilly.com/lillydirect/medicines/zepbound",
+  affiliate: false,
+};
+
+const LILLY_SAVINGS: Cta = {
+  label: "Lilly savings card",
+  url: "https://zepbound.lilly.com/savings",
   affiliate: false,
 };
 
@@ -168,7 +174,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "If covered",
         body: "Foundayo: as low as $25/mo with commercial coverage using Lilly's savings card. Wegovy pill: check NovoCare savings offer for copay reduction.",
-        ctas: [LILLY_DIRECT, NOVOCARE_SAVINGS],
+        ctas: [LILLY_SAVINGS, NOVOCARE_SAVINGS],
       },
       {
         title: "If denied",
@@ -202,7 +208,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Manufacturer savings",
         body: "Zepbound: Lilly savings card can reduce copay. Wegovy: NovoCare savings offer. These stack with your insurance coverage.",
-        ctas: [LILLY_DIRECT, NOVOCARE_SAVINGS],
+        ctas: [LILLY_SAVINGS, NOVOCARE_SAVINGS],
       },
       {
         title: "If denied",
@@ -513,7 +519,7 @@ export const TREE: Record<string, TreeNode> = {
       {
         title: "Check manufacturer savings first",
         body: "Zepbound: Lilly savings card. Wegovy: NovoCare savings offer. A DoseSpot study found patients overpaid by $10M in one quarter, mostly from missed manufacturer programs.",
-        ctas: [LILLY_DIRECT, NOVOCARE_SAVINGS],
+        ctas: [LILLY_SAVINGS, NOVOCARE_SAVINGS],
       },
       {
         title: "Compare pharmacy prices",
