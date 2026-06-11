@@ -330,19 +330,7 @@ export const TREE: Record<string, TreeNode> = {
       PRESCRIPTION_BASICS,
       {
         title: "Important: coverage varies state by state",
-        body: "Medicaid coverage of GLP-1s is decided state by state — some states cover them for weight loss, many don't, and rules change. The fastest way to check: call the member services number on your Medicaid card and ask “Does my plan cover Wegovy, Zepbound, or Foundayo for weight management?” Some states are also adding coverage through a new federal program (the BALANCE Model) starting in 2026, so it's worth asking even if you were denied before.",
-      },
-      {
-        title: "Current landscape",
-        body: "Whether Medicaid covers GLP-1s for weight loss depends entirely on what state you're in. Some states cover them, many don't. Plenty of states cover them for type 2 diabetes but not for obesity.",
-      },
-      {
-        title: "Check your state",
-        body: "Call your Medicaid plan directly and ask: “Does my plan cover Wegovy or Zepbound for weight management?” The answer depends on your specific state and which managed care plan you're on.",
-      },
-      {
-        title: "BALANCE Model",
-        body: "There's a federal pilot called the CMS BALANCE Model that may expand Medicaid GLP-1 coverage starting as early as May 2026 — but only in states that opt in. Not all states will. Ask whether your state has.",
+        body: "Medicaid coverage of GLP-1s is decided state by state — some states cover them for weight loss, many don't, and rules change. Many states cover GLP-1s for type 2 diabetes but not for obesity, and even within one state your specific managed care plan affects what's covered. The fastest way to check: call the member services number on your Medicaid card and ask “Does my plan cover Wegovy, Zepbound, or Foundayo for weight management?” Some states are also adding coverage through a new federal pilot — the CMS BALANCE Model. States have been able to opt in since May 2026 on a rolling basis through January 2027, and not all states will join — worth asking your state Medicaid agency if it's participating. If you were denied Medicaid coverage before, it's worth asking again.",
       },
       SAXENDA_FALLBACK,
       {
