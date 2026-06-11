@@ -274,7 +274,7 @@ function StepCard({
 
 function AffiliateDisclosure() {
   return (
-    <p className="text-xs sm:text-sm text-teal-900/70 leading-relaxed mb-3">
+    <p className="text-[11px] sm:text-xs text-teal-900/55 leading-relaxed mb-3 italic">
       Some links below are affiliate links — if you sign up, we may earn a commission at no extra cost to you. Recommendations are ordered by cost, not by what pays us.
     </p>
   );
