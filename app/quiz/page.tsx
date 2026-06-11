@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { Fragment, useMemo, useState } from "react";
 import Link from "next/link";
 import {
   ROOT_ID,
@@ -176,7 +176,12 @@ function EndpointView({
 
       <ol className="mt-7 flex flex-col gap-4">
         {endpoint.steps.map((step, i) => (
-          <StepCard key={i} index={i + 1} step={step} />
+          <Fragment key={i}>
+            <StepCard index={i + 1} step={step} />
+            {step.title === "How to get a prescription" && (
+              <PreSignupChecklist />
+            )}
+          </Fragment>
         ))}
       </ol>
 
@@ -272,6 +277,50 @@ function CtaButton({ cta }: { cta: Cta }) {
         />
       </svg>
     </a>
+  );
+}
+
+const PRE_SIGNUP_ITEMS = [
+  "Is the medication included in the price, or billed separately?",
+  "Is there a monthly membership fee, and what does it cover?",
+  "Are labs required, and who pays for them?",
+  "What happens to the price after the first month?",
+  "What are the cancellation terms?",
+];
+
+function PreSignupChecklist() {
+  return (
+    <li className="rounded-2xl bg-teal-50/70 border border-teal-200 p-5 sm:p-6">
+      <h3 className="text-sm sm:text-base font-semibold text-teal-900">
+        Before you sign up with any provider, confirm:
+      </h3>
+      <ul className="mt-3 space-y-2">
+        {PRE_SIGNUP_ITEMS.map((item, i) => (
+          <li
+            key={i}
+            className="flex items-start gap-2.5 text-sm text-teal-900/85 leading-snug"
+          >
+            <span
+              aria-hidden
+              className="shrink-0 mt-0.5 inline-flex items-center justify-center w-4 h-4 rounded border-2 border-teal-500 text-teal-600 bg-white"
+            >
+              <svg
+                viewBox="0 0 12 12"
+                className="w-2.5 h-2.5"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              >
+                <path d="M2 6l3 3 5-6" />
+              </svg>
+            </span>
+            <span>{item}</span>
+          </li>
+        ))}
+      </ul>
+    </li>
   );
 }
 

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SarahAvatar from "./components/SarahAvatar";
 
 export default function Home() {
   return (
@@ -17,11 +18,14 @@ export default function Home() {
             Find the right GLP-1
             <br className="hidden sm:block" /> for your situation
           </h1>
-          <p className="mt-6 text-lg sm:text-xl text-teal-900/75 leading-relaxed max-w-xl mx-auto">
-            I&apos;m Sarah — I&apos;m on Zepbound and I built this because finding the right
-            GLP-1 at the right price was way harder than it should be. This free
-            tool walks you through your options in 60 seconds.
-          </p>
+          <div className="mt-6 flex flex-col items-center gap-4 max-w-xl mx-auto">
+            <SarahAvatar size="sm" />
+            <p className="text-lg sm:text-xl text-teal-900/75 leading-relaxed">
+              I&apos;m Sarah — I&apos;m on Zepbound and I built this because finding the right
+              GLP-1 at the right price was way harder than it should be. This free
+              tool walks you through your options in 60 seconds.
+            </p>
+          </div>
           <div className="mt-9 flex flex-col items-center gap-4">
             <Link
               href="/quiz"
