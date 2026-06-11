@@ -11,10 +11,27 @@ const jakarta = Plus_Jakarta_Sans({
   weight: ["400", "500", "600", "700", "800"],
 });
 
+const SITE_TITLE = "FindMeAGLP1 — Find the right GLP-1 for your situation";
+const SITE_DESCRIPTION =
+  "Free 60-second quiz that walks you through your GLP-1 options — insurance, self-pay, Medicare, and more. No login, no cookies, cheapest options first.";
+
 export const metadata: Metadata = {
-  title: "FindMeAGLP1 — Find the right GLP-1 for your situation",
-  description:
-    "A free 60-second tool that walks you through your GLP-1 options based on your insurance and situation. Built by Sarah, who's on Zepbound.",
+  metadataBase: new URL("https://findmeaglp1.com"),
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
+  openGraph: {
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+    url: "https://findmeaglp1.com",
+    siteName: "FindMeAGLP1",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE_TITLE,
+    description: SITE_DESCRIPTION,
+  },
 };
 
 export default function RootLayout({
