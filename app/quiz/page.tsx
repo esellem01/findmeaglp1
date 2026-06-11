@@ -174,16 +174,7 @@ function EndpointView({
         {endpoint.title}
       </h1>
 
-      <ol className="mt-7 flex flex-col gap-4">
-        {endpoint.steps.map((step, i) => (
-          <Fragment key={i}>
-            <StepCard index={i + 1} step={step} />
-            {step.title === "How to get a prescription" && (
-              <PreSignupChecklist />
-            )}
-          </Fragment>
-        ))}
-      </ol>
+      <StepList endpoint={endpoint} />
 
       {endpoint.warnings?.length ? (
         <div className="mt-6 flex flex-col gap-3">
@@ -223,7 +214,37 @@ function MedicalBanner() {
   );
 }
 
-function StepCard({ index, step }: { index: number; step: Step }) {
+function StepList({ endpoint }: { endpoint: Endpoint }) {
+  const firstAffiliateStepIdx = endpoint.steps.findIndex(
+    (s) => s.ctas?.some((c) => c.affiliate)
+  );
+  return (
+    <ol className="mt-7 flex flex-col gap-4">
+      {endpoint.steps.map((step, i) => (
+        <Fragment key={i}>
+          <StepCard
+            index={i + 1}
+            step={step}
+            showAffiliateDisclosure={i === firstAffiliateStepIdx}
+          />
+          {step.title === "How to get a prescription" && (
+            <PreSignupChecklist />
+          )}
+        </Fragment>
+      ))}
+    </ol>
+  );
+}
+
+function StepCard({
+  index,
+  step,
+  showAffiliateDisclosure,
+}: {
+  index: number;
+  step: Step;
+  showAffiliateDisclosure?: boolean;
+}) {
   return (
     <li className="rounded-2xl bg-white border border-teal-100 p-5 sm:p-6 shadow-sm">
       <div className="flex items-start gap-4">
@@ -236,15 +257,26 @@ function StepCard({ index, step }: { index: number; step: Step }) {
           </h2>
           <p className="mt-2 text-teal-900/80 leading-relaxed whitespace-pre-line">{step.body}</p>
           {step.ctas?.length ? (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {step.ctas.map((c, i) => (
-                <CtaButton key={i} cta={c} />
-              ))}
+            <div className="mt-4">
+              {showAffiliateDisclosure && <AffiliateDisclosure />}
+              <div className="flex flex-wrap gap-2">
+                {step.ctas.map((c, i) => (
+                  <CtaButton key={i} cta={c} />
+                ))}
+              </div>
             </div>
           ) : null}
         </div>
       </div>
     </li>
+  );
+}
+
+function AffiliateDisclosure() {
+  return (
+    <p className="text-xs sm:text-sm text-teal-900/70 leading-relaxed mb-3">
+      Some links below are affiliate links — if you sign up, we may earn a commission at no extra cost to you. Recommendations are ordered by cost, not by what pays us.
+    </p>
   );
 }
 
