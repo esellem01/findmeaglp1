@@ -18,8 +18,8 @@ export default function Home() {
             Find the right GLP-1
             <br className="hidden sm:block" /> for your situation
           </h1>
-          <div className="mt-6 flex flex-col items-center gap-4 max-w-xl mx-auto">
-            <SarahAvatar size="sm" />
+          <div className="mt-7 flex flex-col items-center gap-5 max-w-xl mx-auto">
+            <SarahAvatar size="md" />
             <p className="text-lg sm:text-xl text-teal-900/75 leading-relaxed">
               I&apos;m Sarah — I&apos;m on Zepbound and I built this because finding the right
               GLP-1 at the right price was way harder than it should be. This free
