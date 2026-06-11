@@ -60,8 +60,8 @@ export default function Home() {
             body="Recommendations are ordered by cost — including options where we earn nothing."
           />
           <Feature
-            title="No data collected"
-            body="No account, no tracking, no email capture. Just answers."
+            title="No account, no cookies"
+            body="No login, no email capture, no tracking cookies. Your quiz answers never leave your device."
           />
         </div>
       </section>

@@ -12,13 +12,11 @@ export default function PrivacyPage() {
       </h1>
       <div className="mt-6 text-teal-900/85 leading-relaxed space-y-4">
         <p>
-          FindMeAGLP1 does not collect any personal information. We don&apos;t
-          require an account, we don&apos;t ask for an email, and we don&apos;t
-          run analytics or tracking pixels.
-        </p>
-        <p>
-          The quiz runs entirely in your browser. Your answers stay on your
-          device — nothing is sent to a server and nothing is stored.
+          We don&apos;t collect personal information. No accounts, no email
+          capture, no tracking cookies, and your quiz answers never leave your
+          device. We use Vercel Analytics, a privacy-friendly tool, to count
+          anonymous page visits — it doesn&apos;t use cookies and can&apos;t
+          identify who you are.
         </p>
         <p>
           If you click an affiliate link to a third-party telehealth provider,
@@ -26,8 +24,8 @@ export default function PrivacyPage() {
           what you do there.
         </p>
         <p>
-          If this site adds analytics, accounts, or anything else that collects
-          data in the future, this page will be updated first.
+          If anything about how we handle data changes, this page will be
+          updated first.
         </p>
       </div>
     </div>
