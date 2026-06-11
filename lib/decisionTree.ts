@@ -89,6 +89,9 @@ const GOODRX: Cta = {
   affiliate: false,
 };
 
+const PRICING =
+  "Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).";
+
 const PRESCRIPTION_BASICS: Step = {
   title: "First, how prescriptions work",
   body: "You need a prescription from a licensed doctor or provider to get any GLP-1 — there's no over-the-counter version. But you don't need insurance to get one. A prescription is just your doctor saying this medication is right for you. How you pay for it is a separate question, and that's what the rest of this page is about.",
@@ -252,7 +255,7 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "The headline: $50/month",
-        body: "Starting July 1, 2026, if you're enrolled in Medicare Part D, you can get a covered GLP-1 for a flat $50/month copay. That's it. The program runs through December 31, 2027. For Medicare users, this is a complete game changer — full price for these drugs runs $149-$499/month otherwise.",
+        body: "Starting July 1, 2026, if you're enrolled in Medicare Part D, you can get a covered GLP-1 for a flat $50/month copay. That's it. The program runs through December 31, 2027. For Medicare users, this is a complete game changer — full price for these drugs runs $149-$449/month otherwise.",
       },
       {
         title: "Which drugs are covered",
@@ -295,7 +298,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "If you don't qualify",
-        body: "You can still get a GLP-1 by paying out of pocket. Self-pay means you're paying the full price yourself without using insurance — these prices come directly from the drug manufacturer (as of June 2026). Cheapest first: Foundayo $149/mo via LillyDirect, Wegovy pill $149/mo via NovoCare, Wegovy pen $199/mo intro offer through June 2026 then $299-399/mo depending on dose via NovoCare, Zepbound $299-449/mo via LillyDirect.",
+        body: `You can still get a GLP-1 by paying out of pocket. Self-pay means you're paying the full price yourself without using insurance — these prices come directly from the drug manufacturer (as of June 2026). Cheapest first: ${PRICING}`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
     ],
@@ -312,7 +315,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Self-pay options (no insurance needed)",
-        body: "Self-pay means you pay the full price yourself, no insurance involved — these prices come straight from the drug makers (as of June 2026). Cheapest first: Foundayo $149/mo via LillyDirect. Wegovy pill $149/mo via NovoCare. Wegovy pen $199/mo intro offer through June 2026, then $299-399/mo depending on dose, via NovoCare. Zepbound $299/mo (2.5mg starter), $399/mo (5mg), or $449/mo (higher doses) via LillyDirect.",
+        body: `Self-pay means you pay the full price yourself, no insurance involved — these prices come straight from the drug makers (as of June 2026). Cheapest first: ${PRICING}`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
       {
@@ -335,7 +338,7 @@ export const TREE: Record<string, TreeNode> = {
       SAXENDA_FALLBACK,
       {
         title: "If not covered",
-        body: "You can pay out of pocket regardless of Medicaid. Self-pay means paying the full price yourself — these come from the drug makers directly (as of June 2026). Cheapest first: Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).",
+        body: `You can pay out of pocket regardless of Medicaid. Self-pay means paying the full price yourself — these come from the drug makers directly (as of June 2026). Cheapest first: ${PRICING}`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
       GET_PRESCRIBED,
@@ -362,9 +365,10 @@ export const TREE: Record<string, TreeNode> = {
       SAXENDA_FALLBACK,
       {
         title: "If not covered or too restrictive",
-        body: "You can use self-pay for the medication while keeping insurance for everything else. Self-pay means paying full price without insurance — these come directly from the manufacturer (as of June 2026). Cheapest first: Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).",
+        body: `You can use self-pay for the medication while keeping insurance for everything else. Self-pay means paying full price without insurance — these come directly from the manufacturer (as of June 2026). Cheapest first: ${PRICING}`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
+      GET_PRESCRIBED,
       {
         title: "Open enrollment tip",
         body: "When you're shopping for next year's plan, check each plan's covered drug list BEFORE enrolling. Look for plans that cover Wegovy or Zepbound on a reasonable tier — the lower the tier number, the less it costs you per fill.",
@@ -388,7 +392,7 @@ export const TREE: Record<string, TreeNode> = {
       SAXENDA_FALLBACK,
       {
         title: "If not covered through military benefits",
-        body: "Self-pay is open to anyone — it means paying the full price yourself without using insurance. These prices come directly from the drug makers (as of June 2026). Cheapest first: Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).",
+        body: `Self-pay is open to anyone — it means paying the full price yourself without using insurance. These prices come directly from the drug makers (as of June 2026). Cheapest first: ${PRICING}`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
     ],
@@ -407,7 +411,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Wegovy pill: $149/mo",
-        body: "Novo Nordisk's oral version of Wegovy (semaglutide). Same self-pay price as Foundayo — set directly by Novo Nordisk through NovoCare. May produce slightly more weight loss in trials (~14% vs ~12% for Foundayo).",
+        body: "Novo Nordisk's oral version of Wegovy (semaglutide). Same self-pay price as Foundayo — set directly by Novo Nordisk through NovoCare. Separate trials (not a head-to-head comparison) suggest ~14% weight loss for Wegovy pill vs ~12% for Foundayo, but the two haven't been studied side-by-side.",
         ctas: [NOVOCARE],
       },
       PILL_COMPARISON,
@@ -531,8 +535,15 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "If you truly have no insurance",
-        body: "You can still get GLP-1s — they just cost more out of pocket. Self-pay means paying the full price yourself, with prices set directly by the drug makers (as of June 2026). Cheapest first: Foundayo $149/mo, Wegovy pill $149/mo, Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose, Zepbound $299-449/mo.",
+        body: `You can still get GLP-1s — they just cost more out of pocket. Self-pay means paying the full price yourself, with prices set directly by the drug makers (as of June 2026). Cheapest first: ${PRICING}`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
+      },
+      {
+        title: GET_PRESCRIBED.title,
+        body:
+          "Whatever you find out about your coverage, you'll need a prescription either way — here's how to get one.\n\n" +
+          GET_PRESCRIBED.body,
+        ctas: GET_PRESCRIBED.ctas,
       },
     ],
   },
@@ -544,7 +555,7 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Check manufacturer savings first",
-        body: "Most people leave money on the table here. Zepbound has a Lilly savings card; Wegovy has a NovoCare savings offer. Both are manufacturer coupons that reduce what you pay at the pharmacy. A 2025 study found patients overpaid by $10M in one quarter — mostly from missing these programs.",
+        body: "Most people leave money on the table here. Zepbound has a Lilly savings card; Wegovy has a NovoCare savings offer. Both are manufacturer coupons that reduce what you pay at the pharmacy. Studies have found patients collectively overpay millions, mostly from missing these programs.",
         ctas: [LILLY_SAVINGS, NOVOCARE_SAVINGS],
       },
       {
@@ -573,7 +584,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Stack savings",
-        body: "If you really want to squeeze costs down: buy discounted pharmacy gift cards (CardCash sells them at a discount for CVS and Walgreens), combine with a manufacturer savings card, and use a GoodRx coupon. All three can stack together.",
+        body: "Discounted pharmacy gift cards (CardCash sells CVS and Walgreens cards below face value) can combine with either a manufacturer savings card or a GoodRx coupon — though those two usually can't be combined with each other.",
       },
     ],
   },
@@ -669,7 +680,7 @@ export const TREE: Record<string, TreeNode> = {
       SAXENDA_FALLBACK,
       {
         title: "In parallel: Start self-pay",
-        body: "Appeals can take weeks. You don't have to sit around waiting — you can start self-pay (paying out of pocket directly to the drug maker) while the appeal is in progress. Prices as of June 2026, cheapest first: Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect). If the appeal succeeds, you switch back to using insurance.",
+        body: `Appeals can take weeks. You don't have to sit around waiting — you can start self-pay (paying out of pocket directly to the drug maker) while the appeal is in progress. Prices as of June 2026, cheapest first: ${PRICING} If the appeal succeeds, you switch back to using insurance.`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
       {
@@ -723,7 +734,7 @@ export const TREE: Record<string, TreeNode> = {
       SAXENDA_FALLBACK,
       {
         title: "Self-pay while you figure it out",
-        body: "While you sort this out, you can start self-pay — paying out of pocket directly to the drug maker — so you're not stuck waiting. Prices as of June 2026, cheapest first: Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).",
+        body: `While you sort this out, you can start self-pay — paying out of pocket directly to the drug maker — so you're not stuck waiting. Prices as of June 2026, cheapest first: ${PRICING}`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
     ],
@@ -744,7 +755,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Transition options (cheapest first)",
-        body: "All of these are FDA-approved brand-name options (prices as of June 2026). Foundayo pill $149/mo via LillyDirect. Wegovy pill $149/mo via NovoCare. Wegovy pen $199/mo intro offer through June 2026, then $299-399/mo depending on dose, via NovoCare. Wegovy 12-month subscription $249/mo (lock in for a year). Zepbound vials $299-449/mo via LillyDirect.",
+        body: `All of these are FDA-approved brand-name options (prices as of June 2026). Cheapest first: ${PRICING} A Wegovy 12-month subscription is also available at $249/mo (lock in for a year) through Ro, WeightWatchers, or LifeMD.`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
       {
