@@ -1,17 +1,13 @@
 import { ImageResponse } from "next/og";
+import { readFile } from "node:fs/promises";
+import { join } from "node:path";
 
 export const alt = "FindMeAGLP1 — Find the right GLP-1 for your situation";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
-async function loadJakarta(weight: number): Promise<ArrayBuffer> {
-  const url = `https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@${weight}`;
-  const css = await fetch(url).then((r) => r.text());
-  const match = css.match(/src:\s*url\(([^)]+)\)\s*format\('truetype'\)/);
-  if (!match) {
-    throw new Error(`Could not extract TTF URL for Plus Jakarta Sans @${weight}`);
-  }
-  return fetch(match[1]).then((r) => r.arrayBuffer());
+function loadJakarta(weight: number) {
+  return readFile(join(process.cwd(), `assets/fonts/PlusJakartaSans-${weight}.ttf`));
 }
 
 export default async function Image() {
