@@ -106,7 +106,7 @@ const SAXENDA_FALLBACK: Step = {
 
 const GET_PRESCRIBED: Step = {
   title: "How to get a prescription",
-  body: "Three ways to get one, cheapest first.\n\nYour own doctor — free beyond your normal visit cost, no membership. Best if you already have a doctor you see regularly.\n\nPlushCare — $19.99/mo membership (30-day free trial) plus $129/visit without insurance, or just your copay with insurance. Good if you want a one-time setup without a big subscription.\n\nSubscription telehealth (Ro, Found, ShedRx, LifeMD) — $39-149/mo membership that includes ongoing check-ins, dose adjustments, and insurance paperwork help. Good if you want everything handled for you.",
+  body: "Three ways to get one, cheapest first.\n\nYour own doctor — free beyond your normal visit cost, no membership. Best if you already have a doctor you see regularly.\n\nPlushCare — $19.99/mo membership (30-day free trial) plus $129/visit without insurance, or just your copay with insurance. Good if you want a one-time setup without a big subscription.\n\nSubscription telehealth (Ro, Found, ShedRx, LifeMD) — $39-149/mo membership that includes ongoing check-ins, dose adjustments, and insurance paperwork help. Good if you want everything handled for you.\n\nNote: telehealth provider availability varies by state — each provider's signup will confirm they serve yours.",
   ctas: [PLUSHCARE_CTA, ...SUBSCRIPTION_TELEHEALTH_CTAS],
 };
 
@@ -328,6 +328,10 @@ export const TREE: Record<string, TreeNode> = {
     title: "Medicaid coverage for GLP-1s",
     steps: [
       PRESCRIPTION_BASICS,
+      {
+        title: "Important: coverage varies state by state",
+        body: "Medicaid coverage of GLP-1s is decided state by state — some states cover them for weight loss, many don't, and rules change. The fastest way to check: call the member services number on your Medicaid card and ask “Does my plan cover Wegovy, Zepbound, or Foundayo for weight management?” Some states are also adding coverage through a new federal program (the BALANCE Model) starting in 2026, so it's worth asking even if you were denied before.",
+      },
       {
         title: "Current landscape",
         body: "Whether Medicaid covers GLP-1s for weight loss depends entirely on what state you're in. Some states cover them, many don't. Plenty of states cover them for type 2 diabetes but not for obesity.",
