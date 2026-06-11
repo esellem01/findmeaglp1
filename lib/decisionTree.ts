@@ -36,7 +36,7 @@ const PLUSHCARE_CTA: Cta = {
 
 const SUBSCRIPTION_TELEHEALTH_CTAS: Cta[] = [
   { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
-  { label: "Check Found", url: "#affiliate-placeholder", affiliate: true },
+  { label: "Check Found", url: "https://track.revoffers.com/aff_c?offer_id=1162&aff_id=12788", affiliate: true },
   { label: "Check ShedRx", url: "#affiliate-placeholder", affiliate: true },
   { label: "Check LifeMD", url: "#affiliate-placeholder", affiliate: true },
 ];
@@ -528,7 +528,7 @@ export const TREE: Record<string, TreeNode> = {
         body: "Several services will check your coverage for you, free. Ro has a GLP-1 Insurance Coverage Checker. Found will call your insurer on your behalf and report back. Weight Watchers has a Cost Estimator. NovoCare's coverage checker tells you whether Wegovy is on your plan.",
         ctas: [
           { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
-          { label: "Check Found", url: "#affiliate-placeholder", affiliate: true },
+          { label: "Check Found", url: "https://track.revoffers.com/aff_c?offer_id=1162&aff_id=12788", affiliate: true },
           { label: "Check WeightWatchers", url: "#affiliate-placeholder", affiliate: true },
           NOVOCARE_COVERAGE,
         ],
