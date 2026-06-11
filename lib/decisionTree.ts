@@ -90,7 +90,7 @@ const GOODRX: Cta = {
 };
 
 const PRICING =
-  "Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $299-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).";
+  "Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $349-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).";
 
 const PRESCRIPTION_BASICS: Step = {
   title: "First, how prescriptions work",
@@ -263,7 +263,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Who qualifies",
-        body: "Three things have to be true. (1) You're enrolled in Medicare Part D. (2) Your BMI is 30 or higher — OR 27+ with a weight-related condition like heart disease, prediabetes, high blood pressure, etc. (3) Your prescriber confirms in writing that you meet the criteria.",
+        body: "Three things have to be true. (1) You're enrolled in Medicare Part D. (2) You're 18 or older. (3) You meet ONE of these two clinical paths: a BMI of 30 or higher PLUS heart failure with preserved ejection fraction, uncontrolled high blood pressure despite taking two or more blood pressure medications, or chronic kidney disease (stage 3a or higher) — OR a BMI of 27 or higher PLUS prediabetes, a previous heart attack, a previous stroke, or symptomatic peripheral artery disease. Note: a high BMI by itself isn't enough — you also need one of the listed conditions. Your prescriber confirms this in writing.",
       },
       {
         title: "Your Part D plan does NOT need to opt in",
@@ -290,7 +290,7 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Eligibility checklist",
-        body: "Three things you need: (1) active Medicare Part D enrollment, (2) BMI 30+ — OR BMI 27+ with at least one of these conditions: heart disease, prediabetes or type 2 diabetes, high blood pressure, high cholesterol, or obstructive sleep apnea, and (3) your prescriber's written confirmation that you meet the criteria.",
+        body: "Three things you need: (1) active Medicare Part D enrollment, (2) you're 18 or older, and (3) you meet one of two clinical paths. Path A: BMI 30+ with heart failure with preserved ejection fraction, uncontrolled high blood pressure despite two or more blood pressure medications, or chronic kidney disease stage 3a or higher. Path B: BMI 27+ with prediabetes, a previous heart attack, a previous stroke, or symptomatic peripheral artery disease. Important: a qualifying BMI alone isn't enough — you need one of the listed conditions too. Your prescriber confirms in writing that you meet the criteria.",
       },
       {
         title: "Next step",
@@ -432,7 +432,7 @@ export const TREE: Record<string, TreeNode> = {
       PRESCRIPTION_BASICS,
       {
         title: "Wegovy pen: $199/mo intro offer (through June 2026)",
-        body: "Novo Nordisk's pre-filled Wegovy injector pen through NovoCare. The $199/mo intro rate is for new patients only and expires June 30, 2026 — after that it's $299-399/mo depending on your dose. Self-pay (you pay directly, no insurance). Currently the lowest entry point for a brand-name injection (as of June 2026).",
+        body: "Novo Nordisk's pre-filled Wegovy injector pen through NovoCare. The $199/mo intro rate is for new patients only and expires June 30, 2026 — after that it's $349/mo for standard doses (0.25-2.4mg) or $399/mo for the HD 7.2mg dose. Self-pay (you pay directly, no insurance). Currently the lowest entry point for a brand-name injection (as of June 2026).",
         ctas: [NOVOCARE],
       },
       {
@@ -480,7 +480,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "$199/mo: Wegovy pen (intro offer through June 2026)",
-        body: "The Wegovy injection pre-filled in a pen, through NovoCare. The $199/mo intro rate is for new patients only and expires June 30, 2026 — after that the pen is $299-399/mo depending on dose. Most flexible option (no long-term commitment).",
+        body: "The Wegovy injection pre-filled in a pen, through NovoCare. The $199/mo intro rate is for new patients only and expires June 30, 2026 — after that the pen is $349/mo for standard doses (0.25-2.4mg) or $399/mo for the HD 7.2mg dose. Most flexible option (no long-term commitment).",
         ctas: [NOVOCARE],
       },
       {
