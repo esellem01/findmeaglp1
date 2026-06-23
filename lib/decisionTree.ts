@@ -30,7 +30,7 @@ export type TreeNode = Question | Endpoint;
 
 const PLUSHCARE_CTA: Cta = {
   label: "Check PlushCare",
-  url: "#affiliate-placeholder",
+  url: "https://track.revoffers.com/aff_c?offer_id=344&aff_id=12788&url_id=8347",
   affiliate: true,
 };
 
