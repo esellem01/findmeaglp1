@@ -12,6 +12,9 @@ import {
   type TreeNode,
 } from "@/lib/decisionTree";
 
+const isWiredCta = (c: Cta) => !c.affiliate || c.url.startsWith("http");
+const isLiveAffiliate = (c: Cta) => c.affiliate && c.url.startsWith("http");
+
 export default function QuizPage() {
   const [currentId, setCurrentId] = useState<string>(ROOT_ID);
   const [history, setHistory] = useState<string[]>([]);
@@ -216,7 +219,7 @@ function MedicalBanner() {
 
 function StepList({ endpoint }: { endpoint: Endpoint }) {
   const firstAffiliateStepIdx = endpoint.steps.findIndex(
-    (s) => s.ctas?.some((c) => c.affiliate)
+    (s) => s.ctas?.some(isLiveAffiliate)
   );
   return (
     <ol className="mt-7 flex flex-col gap-4">
@@ -269,16 +272,20 @@ function StepCard({
           {step.note ? (
             <p className="mt-3 text-sm text-teal-900/60 leading-relaxed">{step.note}</p>
           ) : null}
-          {step.ctas?.length ? (
-            <div className="mt-4">
-              {showAffiliateDisclosure && <AffiliateDisclosure />}
-              <div className="flex flex-wrap gap-2">
-                {step.ctas.map((c, i) => (
-                  <CtaButton key={i} cta={c} />
-                ))}
+          {(() => {
+            const visibleCtas = step.ctas?.filter(isWiredCta) ?? [];
+            if (visibleCtas.length === 0) return null;
+            return (
+              <div className="mt-4">
+                {showAffiliateDisclosure && <AffiliateDisclosure />}
+                <div className="flex flex-wrap gap-2">
+                  {visibleCtas.map((c, i) => (
+                    <CtaButton key={i} cta={c} />
+                  ))}
+                </div>
               </div>
-            </div>
-          ) : null}
+            );
+          })()}
         </div>
       </div>
     </li>
