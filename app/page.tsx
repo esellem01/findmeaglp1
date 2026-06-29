@@ -1,6 +1,10 @@
 import Link from "next/link";
 import SarahAvatar from "./components/SarahAvatar";
 
+// Inlined as a string literal at build time (see `env` in next.config.ts).
+// Reflects the last build/deploy, not when a visitor loads the page.
+const UPDATED = process.env.NEXT_PUBLIC_BUILD_DATE;
+
 export default function Home() {
   return (
     <div className="flex-1 flex flex-col">
@@ -12,7 +16,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-3xl px-5 sm:px-6 pt-14 pb-20 sm:pt-20 sm:pb-28 text-center">
           <span className="inline-flex items-center gap-2 rounded-full bg-white/80 border border-teal-100 px-3 py-1 text-xs font-medium text-teal-700 shadow-sm">
             <span className="inline-block w-1.5 h-1.5 rounded-full bg-teal-500" />
-            Updated June 2026
+            Updated {UPDATED}
           </span>
           <h1 className="mt-5 text-4xl sm:text-5xl font-bold tracking-tight text-teal-900 leading-[1.1]">
             Find the right GLP-1
@@ -47,7 +51,7 @@ export default function Home() {
               </svg>
             </Link>
             <p className="text-xs sm:text-sm text-teal-900/60">
-              No login required · Free · Updated June 2026
+              No login required · Free · Updated {UPDATED}
             </p>
           </div>
         </div>
