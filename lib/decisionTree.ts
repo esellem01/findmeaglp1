@@ -444,11 +444,10 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Wegovy subscription: $249/mo (12-month commit)",
-        body: "Novo Nordisk offers a discounted rate of $249/mo if you commit to 12 months. Available through Ro, WeightWatchers, or LifeMD. Includes injection or pill. Locks in your price for a year — worth it if you're confident you'll stay on the drug.",
+        body: "Novo Nordisk offers a discounted rate of $249/mo if you commit to 12 months. Available through Ro or WeightWatchers. Includes injection or pill. Locks in your price for a year — worth it if you're confident you'll stay on the drug.",
         ctas: [
           { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
           { label: "Check WeightWatchers", url: "#affiliate-placeholder", affiliate: true },
-          { label: "Check LifeMD", url: "#affiliate-placeholder", affiliate: true },
         ],
       },
       {
@@ -492,11 +491,10 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "$249/mo: Wegovy 12-month subscription",
-        body: "A discounted rate if you lock in for 12 months. Includes injection or pill. Available through Ro, WeightWatchers, or LifeMD. Cheaper than month-to-month at the higher doses, more expensive at the starter dose — worth it only if you're confident you'll stay on Wegovy for a year.",
+        body: "A discounted rate if you lock in for 12 months. Includes injection or pill. Available through Ro or WeightWatchers. Cheaper than month-to-month at the higher doses, more expensive at the starter dose — worth it only if you're confident you'll stay on Wegovy for a year.",
         ctas: [
           { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
           { label: "Check WeightWatchers", url: "#affiliate-placeholder", affiliate: true },
-          { label: "Check LifeMD", url: "#affiliate-placeholder", affiliate: true },
         ],
       },
       {
@@ -577,11 +575,10 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Wegovy 12-month subscription",
-        body: "Novo Nordisk's $249/mo subscription is cheaper than buying Wegovy month-to-month at higher doses — but you commit to 12 months through Ro, WeightWatchers, or LifeMD. Worth it if you're confident you'll stay on the drug.",
+        body: "Novo Nordisk's $249/mo subscription is cheaper than buying Wegovy month-to-month at higher doses — but you commit to 12 months through Ro or WeightWatchers. Worth it if you're confident you'll stay on the drug.",
         ctas: [
           { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
           { label: "Check WeightWatchers", url: "#affiliate-placeholder", affiliate: true },
-          { label: "Check LifeMD", url: "#affiliate-placeholder", affiliate: true },
         ],
       },
       {
@@ -762,7 +759,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Transition options (cheapest first)",
-        body: `All of these are FDA-approved brand-name options (prices as of June 2026). Cheapest first: ${PRICING} A Wegovy 12-month subscription is also available at $249/mo (lock in for a year) through Ro, WeightWatchers, or LifeMD.`,
+        body: `All of these are FDA-approved brand-name options (prices as of June 2026). Cheapest first: ${PRICING} A Wegovy 12-month subscription is also available at $249/mo (lock in for a year) through Ro or WeightWatchers.`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
       },
       {
