@@ -34,12 +34,19 @@ const PLUSHCARE_CTA: Cta = {
   affiliate: true,
 };
 
-const SUBSCRIPTION_TELEHEALTH_CTAS: Cta[] = [
-  { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true },
-  { label: "Check Found", url: "https://track.revoffers.com/aff_c?offer_id=1162&aff_id=12788&url_id=12126", affiliate: true },
-  { label: "Check ShedRx", url: "#affiliate-placeholder", affiliate: true },
-  { label: "Check LifeMD", url: "#affiliate-placeholder", affiliate: true },
-];
+const SESAME_CTA: Cta = {
+  label: "Check Sesame",
+  url: "https://track.revoffers.com/aff_c?offer_id=239&aff_id=12788&url_id=8346",
+  affiliate: true,
+};
+
+const FOUND_CTA: Cta = {
+  label: "Check Found",
+  url: "https://track.revoffers.com/aff_c?offer_id=1162&aff_id=12788&url_id=12126",
+  affiliate: true,
+};
+
+const RO_CTA: Cta = { label: "Check Ro", url: "#affiliate-placeholder", affiliate: true };
 
 const LILLY_DIRECT: Cta = {
   label: "Visit LillyDirect",
@@ -109,8 +116,8 @@ const SAXENDA_FALLBACK: Step = {
 
 const GET_PRESCRIBED: Step = {
   title: "How to get a prescription",
-  body: "Three ways to get one, cheapest first.\n\nYour own doctor — free beyond your normal visit cost, no membership. Best if you already have a doctor you see regularly.\n\nPlushCare — $19.99/mo membership (30-day free trial) plus $129/visit without insurance, or just your copay with insurance. Good if you want a one-time setup without a big subscription.\n\nSubscription telehealth (Ro, Found, ShedRx, LifeMD) — $39-149/mo membership that includes ongoing check-ins, dose adjustments, and insurance paperwork help. Good if you want everything handled for you.\n\nNote: telehealth provider availability varies by state — each provider's signup will confirm they serve yours.",
-  ctas: [PLUSHCARE_CTA, ...SUBSCRIPTION_TELEHEALTH_CTAS],
+  body: "You pay a prescriber to write the script, but the medication itself costs the same wherever you fill it (LillyDirect or NovoCare). GLP-1s need ongoing refills, and providers require periodic check-ins to keep prescribing. So the real difference between these is the prescriber fee and whether you pay only when you have a visit, or pay continuously. Your own doctor is cheapest by far:\n\nYour own doctor — no extra telehealth fee or membership, just your normal visit co-pay. Cheapest if you already have a doctor who'll prescribe.\n\nPlushCare — $19.99/mo membership with a 30-day free trial, plus $129/visit without insurance (or just your copay with insurance). Month-to-month, so you can cancel between refill visits and only pay when you actually need a check-in. Works like an ongoing primary-care doctor and can bill your insurance.\n\nSesame (Success by Sesame) — about $99 every 28 days, paid out of pocket (not billed to insurance). A marketplace, not a clinic: you pick your own provider from reviews, and they send a brand-name prescription to LillyDirect with no markup on the drug. You can cancel between visits (no annual lock-in), but note it auto-renews on a 28-day cycle, so set a reminder.\n\nWeight-loss subscriptions (Ro, Found) — $39-149/mo, ongoing. They assign you a provider and handle your refills, check-ins, and dose adjustments automatically — the most hands-off, but also the most commitment (some push annual plans). Check whether their price includes the medication or adds a markup, since some do.\n\nNote: telehealth provider availability varies by state — each provider's signup will confirm they serve yours.",
+  ctas: [PLUSHCARE_CTA, SESAME_CTA, FOUND_CTA, RO_CTA],
 };
 
 export const ROOT_ID = "q1";
