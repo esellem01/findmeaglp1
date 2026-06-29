@@ -256,6 +256,19 @@ function StepCard({
             {step.title}
           </h2>
           <p className="mt-2 text-teal-900/80 leading-relaxed whitespace-pre-line">{step.body}</p>
+          {step.options?.length ? (
+            <dl className="mt-4 flex flex-col gap-3">
+              {step.options.map((opt, i) => (
+                <div key={i}>
+                  <dt className="font-semibold text-teal-600">{opt.name}</dt>
+                  <dd className="mt-0.5 text-teal-900/80 leading-relaxed">{opt.desc}</dd>
+                </div>
+              ))}
+            </dl>
+          ) : null}
+          {step.note ? (
+            <p className="mt-3 text-sm text-teal-900/60 leading-relaxed">{step.note}</p>
+          ) : null}
           {step.ctas?.length ? (
             <div className="mt-4">
               {showAffiliateDisclosure && <AffiliateDisclosure />}

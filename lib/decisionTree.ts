@@ -4,9 +4,16 @@ export type Cta = {
   affiliate: boolean;
 };
 
+export type StepOption = {
+  name: string;
+  desc: string;
+};
+
 export type Step = {
   title: string;
   body: string;
+  options?: StepOption[];
+  note?: string;
   ctas?: Cta[];
 };
 
@@ -116,7 +123,26 @@ const SAXENDA_FALLBACK: Step = {
 
 const GET_PRESCRIBED: Step = {
   title: "How to get a prescription",
-  body: "You pay a prescriber to write the script, but the medication itself costs the same wherever you fill it (LillyDirect or NovoCare). GLP-1s need ongoing refills, and providers require periodic check-ins to keep prescribing. So the real difference between these is the prescriber fee and whether you pay only when you have a visit, or pay continuously. Your own doctor is cheapest by far:\n\nYour own doctor — no extra telehealth fee or membership, just your normal visit co-pay. Cheapest if you already have a doctor who'll prescribe.\n\nPlushCare — $19.99/mo membership with a 30-day free trial, plus $129/visit without insurance (or just your copay with insurance). Month-to-month, so you can cancel between refill visits and only pay when you actually need a check-in. Works like an ongoing primary-care doctor and can bill your insurance.\n\nSesame (Success by Sesame) — about $99 every 28 days, paid out of pocket (not billed to insurance). A marketplace, not a clinic: you pick your own provider from reviews, and they send a brand-name prescription to LillyDirect with no markup on the drug. You can cancel between visits (no annual lock-in), but note it auto-renews on a 28-day cycle, so set a reminder.\n\nWeight-loss subscriptions (Ro, Found) — $39-149/mo, ongoing. They assign you a provider and handle your refills, check-ins, and dose adjustments automatically — the most hands-off, but also the most commitment (some push annual plans). Check whether their price includes the medication or adds a markup, since some do.\n\nNote: telehealth provider availability varies by state — each provider's signup will confirm they serve yours.",
+  body: "You pay a prescriber to write the script, but the medication itself costs the same wherever you fill it (LillyDirect or NovoCare). GLP-1s need ongoing refills, and providers require periodic check-ins to keep prescribing. So the real difference between these is the prescriber fee and whether you pay only when you have a visit, or pay continuously. Your own doctor is cheapest by far:",
+  options: [
+    {
+      name: "Your own doctor",
+      desc: "No extra telehealth fee or membership, just your normal visit co-pay. Cheapest if you already have a doctor who'll prescribe.",
+    },
+    {
+      name: "PlushCare",
+      desc: "$19.99/mo membership with a 30-day free trial, plus $129/visit without insurance (or just your copay with insurance). Month-to-month, so you can cancel between refill visits and only pay when you actually need a check-in. Works like an ongoing primary-care doctor and can bill your insurance.",
+    },
+    {
+      name: "Sesame",
+      desc: "About $99 every 28 days, paid out of pocket (not billed to insurance). A marketplace, not a clinic: you pick your own provider from reviews, and they send a brand-name prescription to LillyDirect with no markup on the drug. You can cancel between visits (no annual lock-in), but note it auto-renews on a 28-day cycle, so set a reminder.",
+    },
+    {
+      name: "Weight-loss subscriptions (Ro, Found)",
+      desc: "$39-149/mo, ongoing. They assign you a provider and handle your refills, check-ins, and dose adjustments automatically — the most hands-off, but also the most commitment (some push annual plans). Check whether their price includes the medication or adds a markup, since some do.",
+    },
+  ],
+  note: "Note: telehealth provider availability varies by state — each provider's signup will confirm they serve yours.",
   ctas: [PLUSHCARE_CTA, SESAME_CTA, FOUND_CTA, RO_CTA],
 };
 
@@ -548,6 +574,8 @@ export const TREE: Record<string, TreeNode> = {
         body:
           "Whatever you find out about your coverage, you'll need a prescription either way — here's how to get one.\n\n" +
           GET_PRESCRIBED.body,
+        options: GET_PRESCRIBED.options,
+        note: GET_PRESCRIBED.note,
         ctas: GET_PRESCRIBED.ctas,
       },
     ],
