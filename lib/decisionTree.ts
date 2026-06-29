@@ -452,7 +452,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "Zepbound vials: $299-449/mo",
-        body: "$299/mo (2.5mg starter dose), $399/mo (5mg), or $449/mo (higher doses) through LillyDirect. These are vials you draw with a syringe yourself — not pre-filled pens.",
+        body: "$299/mo (2.5mg starter dose) and $399/mo (5mg) through LillyDirect. Higher doses (7.5-15mg) are $449/mo under a Lilly self-pay offer through December 31, 2026 if you refill within 45 days — otherwise $499/mo (7.5mg) or $699/mo (10mg and up). These are vials you draw with a syringe yourself, not pre-filled pens.",
         ctas: [LILLY_DIRECT],
       },
       {
@@ -509,7 +509,7 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "$449/mo: Zepbound vials (7.5-15mg)",
-        body: "All the higher doses (7.5mg, 10mg, 12.5mg, 15mg). Through LillyDirect.",
+        body: "All the higher doses (7.5mg, 10mg, 12.5mg, 15mg) through LillyDirect. The $449 price is a Lilly self-pay offer running through December 31, 2026 — you must refill within 45 days of your last order to keep it. Without the offer, the regular price is $499/mo for 7.5mg and $699/mo for 10mg and up.",
         ctas: [LILLY_DIRECT],
       },
       GET_PRESCRIBED,
