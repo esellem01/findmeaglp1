@@ -712,6 +712,10 @@ export const TREE: Record<string, TreeNode> = {
       },
       GET_PRESCRIBED,
       {
+        title: "Worth raising: sleep apnea",
+        body: "Zepbound is FDA-approved to treat moderate-to-severe obstructive sleep apnea in adults with obesity — a separate approved use from weight loss. If you have sleep apnea, or symptoms like loud snoring, gasping at night, or daytime exhaustion, ask your doctor whether that diagnosis opens a path to a prescription and possible insurance coverage. This is information, not medical advice — your provider decides what's appropriate.",
+      },
+      {
         title: "Keep your PCP informed",
         body: "Even if you get prescribed through telehealth, tell your regular doctor that you're starting a GLP-1. They should know about every medication you're on so they can keep an eye on your overall health.",
       },
