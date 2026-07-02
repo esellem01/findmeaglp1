@@ -201,11 +201,10 @@ export const TREE: Record<string, TreeNode> = {
   medicare_root: {
     type: "question",
     id: "medicare_root",
-    text: "Are you aware of the Medicare GLP-1 Bridge program starting July 2026?",
+    text: "Are you aware of the Medicare GLP-1 Bridge program?",
     options: [
       { label: "No, tell me about it", next: "MEDICARE_BRIDGE" },
       { label: "Yes, but I need help qualifying", next: "MEDICARE_QUALIFY" },
-      { label: "I want to start before July 2026", next: "MEDICARE_NOW" },
     ],
   },
 
@@ -288,15 +287,15 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "The headline: $50/month",
-        body: "Starting July 1, 2026, if you're enrolled in Medicare Part D, you can get a covered GLP-1 for a flat $50/month copay. That's it. The program runs through December 31, 2027. For Medicare users, this is a complete game changer — full price for these drugs runs $149-$449/month otherwise.",
+        body: "As of July 1, 2026, if you're enrolled in Medicare Part D, you can get a covered GLP-1 for a flat $50/month copay — the same $50 at any dose. That's it. The program is live now and runs through December 31, 2027. For Medicare users, this is a complete game changer — self-pay prices for these drugs run roughly $149–$699/month otherwise, depending on drug and dose. One caveat: that $50 doesn't count toward your Part D deductible or out-of-pocket maximum, and Extra Help (the low-income subsidy) can't be applied to it.",
       },
       {
         title: "Which drugs are covered",
-        body: "Foundayo (pill), Wegovy (pill and injection), and the Zepbound KwikPen (a pre-filled injector pen). Ozempic isn't covered — it's still Medicare-approved only for type 2 diabetes. Compounded versions aren't covered either.",
+        body: "Foundayo (pill), Wegovy (pill and pen injection), and the Zepbound KwikPen (a pre-filled injector pen) — and only those. Zepbound vials and single-dose pens are NOT covered. Ozempic isn't included in the Bridge program. Compounded versions aren't covered either.",
       },
       {
         title: "Who qualifies",
-        body: "Three things have to be true. (1) You're enrolled in Medicare Part D. (2) You're 18 or older. (3) You meet ONE of these two clinical paths: a BMI of 30 or higher PLUS heart failure with preserved ejection fraction, uncontrolled high blood pressure despite taking two or more blood pressure medications, or chronic kidney disease (stage 3a or higher) — OR a BMI of 27 or higher PLUS prediabetes, a previous heart attack, a previous stroke, or symptomatic peripheral artery disease. Note: a high BMI by itself isn't enough — you also need one of the listed conditions. Your prescriber confirms this in writing.",
+        body: "Three things have to be true. (1) You're enrolled in Medicare Part D. (2) You're 18 or older. (3) You meet ONE of these three clinical paths: a BMI of 35 or higher on its own — OR a BMI of 30 or higher PLUS heart failure, uncontrolled high blood pressure, or chronic kidney disease — OR a BMI of 27 or higher PLUS prediabetes, a previous heart attack, a previous stroke, or symptomatic peripheral artery disease. A BMI of 35+ qualifies on its own; between 27 and 35 you also need one of the listed conditions. The drug also has to be prescribed for weight loss, not another condition, and your prescriber confirms all of this in writing.",
       },
       {
         title: "Your Part D plan does NOT need to opt in",
@@ -304,11 +303,11 @@ export const TREE: Record<string, TreeNode> = {
       },
       {
         title: "What to do now",
-        body: "Talk to your doctor about getting the prior authorization ready so it can be submitted the day the program opens (July 1, 2026). The faster the paperwork is in, the faster you start paying $50/mo instead of full price.",
+        body: "Now that the program is open, talk to your doctor about getting the prior authorization submitted. The faster the paperwork is in, the faster you start paying $50/mo instead of full price.",
       },
       {
-        title: "Already on a GLP-1? You still qualify",
-        body: "If you've already started a GLP-1 and lost weight, don't worry — your prescriber confirms your ORIGINAL qualifying BMI, not your current weight. Losing weight on the drug doesn't disqualify you from staying on it at the $50 rate.",
+        title: "Already on a GLP-1? It comes down to who's paying",
+        body: "The key question is who currently pays for it. If your Part D plan already covers your GLP-1 — for diabetes or any other condition — you're not eligible for the Bridge; keep getting it through your plan. But if you've been paying out of pocket (self-pay, outside Medicare), you can move onto the Bridge: your prescriber attests that you met one of the BMI criteria when you FIRST started the drug, even if you've since lost weight and dropped below that cutoff.",
       },
     ],
     warnings: [
@@ -323,37 +322,16 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       {
         title: "Eligibility checklist",
-        body: "Three things you need: (1) active Medicare Part D enrollment, (2) you're 18 or older, and (3) you meet one of two clinical paths. Path A: BMI 30+ with heart failure with preserved ejection fraction, uncontrolled high blood pressure despite two or more blood pressure medications, or chronic kidney disease stage 3a or higher. Path B: BMI 27+ with prediabetes, a previous heart attack, a previous stroke, or symptomatic peripheral artery disease. Important: a qualifying BMI alone isn't enough — you need one of the listed conditions too. Your prescriber confirms in writing that you meet the criteria.",
+        body: "Four things you need: (1) active Medicare Part D enrollment, (2) you're 18 or older, (3) the GLP-1 is prescribed for weight loss (not another condition), and (4) you meet one of three clinical paths. Path A: a BMI of 35 or higher on its own. Path B: BMI 30+ with heart failure, uncontrolled high blood pressure, or chronic kidney disease. Path C: BMI 27+ with prediabetes, a previous heart attack, a previous stroke, or symptomatic peripheral artery disease. A BMI of 35+ qualifies on its own; between 27 and 35 you also need one of the listed conditions. Your prescriber confirms in writing that you meet the criteria.",
       },
       {
         title: "Next step",
-        body: "Schedule a visit with your doctor before July 1, 2026. Ask them to document your BMI and any qualifying conditions in your chart now. That way the prior authorization (the paperwork asking Medicare to cover the drug) is ready to submit through the central CMS system the day the program opens. Your Part D plan doesn't handle this part — CMS does.",
+        body: "Schedule a visit with your doctor and ask them to document your BMI and any qualifying conditions in your chart. From there, the prior authorization (the paperwork asking Medicare to cover the drug) goes in through the central CMS system — your Part D plan doesn't handle this part, CMS does. Now that the program is live, the sooner the paperwork is in, the sooner you're paying $50/mo.",
       },
       {
         title: "If you don't qualify",
         body: `You can still get a GLP-1 by paying out of pocket. Self-pay means you're paying the full price yourself without using insurance — these prices come directly from the drug manufacturer (as of June 2026). Cheapest first: ${PRICING}`,
         ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
-      },
-    ],
-  },
-
-  MEDICARE_NOW: {
-    type: "endpoint",
-    id: "MEDICARE_NOW",
-    title: "Starting before the Bridge program (before July 2026)",
-    steps: [
-      {
-        title: "Current Medicare coverage",
-        body: "Right now, Medicare Part D generally doesn't cover GLP-1s for weight loss. It does cover Ozempic and Mounjaro for type 2 diabetes. If you have T2D, your doctor can prescribe one of those for the diabetes — and weight loss may follow as a side benefit.",
-      },
-      {
-        title: "Self-pay options (no insurance needed)",
-        body: `Self-pay means you pay the full price yourself, no insurance involved — these prices come straight from the drug makers (as of June 2026). Cheapest first: ${PRICING}`,
-        ctas: [FOUNDAYO_DIRECT, NOVOCARE, LILLY_DIRECT],
-      },
-      {
-        title: "Consider waiting for the Bridge",
-        body: "If July 2026 is close for you, the Bridge program at $50/mo may be worth the wait vs. paying $149-449/mo out of pocket right now. Talk it through with your doctor — the right answer depends on how urgent things are for you.",
       },
     ],
   },
@@ -803,8 +781,8 @@ export const TREE: Record<string, TreeNode> = {
         body: "Check whether your plan covers brand-name GLP-1s for weight loss. With brand prices dropping in 2025-2026, some plans that didn't cover GLP-1s before may have started to.",
       },
       {
-        title: "Medicare: wait for the Bridge",
-        body: "If you're on Medicare Part D, the Bridge program starts July 1, 2026 at $50/mo for covered GLP-1s — a much better deal than self-pay if you can hold out a few weeks.",
+        title: "Medicare: the Bridge program is live",
+        body: "If you're on Medicare Part D, the Bridge program is now live — a flat $50/mo for covered GLP-1s, a much better deal than self-pay. Ask your doctor to submit the prior authorization through the central CMS system.",
       },
     ],
     warnings: [
