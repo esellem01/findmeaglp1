@@ -104,7 +104,7 @@ const GOODRX: Cta = {
 };
 
 const PRICING =
-  "Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through June 2026 — then $349-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).";
+  "Foundayo $149/mo (LillyDirect), Wegovy pill $149/mo (NovoCare), Wegovy pen $199/mo intro offer through December 2026 — then $349-399/mo depending on dose (NovoCare), Zepbound $299-449/mo (LillyDirect).";
 
 const PRESCRIPTION_BASICS: Step = {
   title: "First, how prescriptions work",
@@ -464,8 +464,8 @@ export const TREE: Record<string, TreeNode> = {
     steps: [
       PRESCRIPTION_BASICS,
       {
-        title: "Wegovy pen: $199/mo intro offer (through June 2026)",
-        body: "Novo Nordisk's pre-filled Wegovy injector pen through NovoCare. The $199/mo intro rate is for new patients only and expires June 30, 2026 — after that it's $349/mo for standard doses (0.25-2.4mg) or $399/mo for the HD 7.2mg dose. Self-pay (you pay directly, no insurance). Currently the lowest entry point for a brand-name injection (as of June 2026).",
+        title: "Wegovy pen: $199/mo intro offer (through December 2026)",
+        body: "Novo Nordisk's pre-filled Wegovy injector pen through NovoCare. The $199/mo intro rate is for new patients only and expires December 31, 2026 — after that it's $349/mo for standard doses (0.25-2.4mg) or $399/mo for the HD 7.2mg dose. Self-pay (you pay directly, no insurance). Currently the lowest entry point for a brand-name injection (as of July 2026).",
         ctas: [NOVOCARE],
       },
       {
@@ -511,8 +511,8 @@ export const TREE: Record<string, TreeNode> = {
         ctas: [NOVOCARE],
       },
       {
-        title: "$199/mo: Wegovy pen (intro offer through June 2026)",
-        body: "The Wegovy injection pre-filled in a pen, through NovoCare. The $199/mo intro rate is for new patients only and expires June 30, 2026 — after that the pen is $349/mo for standard doses (0.25-2.4mg) or $399/mo for the HD 7.2mg dose. Most flexible option (no long-term commitment).",
+        title: "$199/mo: Wegovy pen (intro offer through December 2026)",
+        body: "The Wegovy injection pre-filled in a pen, through NovoCare. The $199/mo intro rate is for new patients only and expires December 31, 2026 — after that the pen is $349/mo for standard doses (0.25-2.4mg) or $399/mo for the HD 7.2mg dose. Most flexible option (no long-term commitment).",
         ctas: [NOVOCARE],
       },
       {
